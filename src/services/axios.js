@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiAxios = axios.create({
-    baseURL: "https://digitalapc.xyz:9081/stubs/handler_api",
+    baseURL: "https://apcodes.top:9081/stubs/handler_api",
     data: {},
     headers: {}
 })
