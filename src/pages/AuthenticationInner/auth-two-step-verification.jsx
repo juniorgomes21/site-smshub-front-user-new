@@ -138,7 +138,7 @@ const TwostepVerification = () => {
                 </p>
                 <p>
                   © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
-                  <i className="mdi mdi-heart text-danger"></i> by Themesbrand
+                  <i className="mdi mdi-heart text-danger"></i> by malorca
                 </p>
               </div>
             </Col>

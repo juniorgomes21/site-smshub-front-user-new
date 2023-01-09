@@ -199,7 +199,7 @@ const Register = () => {
                 </p>
                 <p>
                   © {new Date().getFullYear()} Skote. Crafted with{" "}
-                  <i className="mdi mdi-heart text-danger" /> by Themesbrand
+                  <i className="mdi mdi-heart text-danger" /> by malorca
                 </p>
               </div>
             </Col>

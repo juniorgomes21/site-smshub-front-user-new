@@ -51,7 +51,7 @@ let users = [
     username: "",
     role: "",
     password: "123456",
-    email: "@themesbrand.com",
+    email: "@maloca.com",
   },
 ]
 

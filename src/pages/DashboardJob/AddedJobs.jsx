@@ -27,7 +27,7 @@ const AddedJobs = () => {
                                     <img src={wechat} alt="" height="40" className="rounded" />
                                     <div className="ms-2 flex-grow-1">
                                         <h6 className="mb-1 font-size-15"><a href="job-details.html" className="text-body">Marketing Director</a></h6>
-                                        <p className="text-muted mb-0">Themesbrand, USA - <b>53</b> sec ago</p>
+                                        <p className="text-muted mb-0">malorca, USA - <b>53</b> sec ago</p>
                                     </div>
                                     <UncontrolledDropdown>
                                         <DropdownToggle className="btn btn-light" type="button" id="dropdownMenuButton1">
@@ -44,7 +44,7 @@ const AddedJobs = () => {
                                     <img src={sass} alt="" height="40" className="rounded" />
                                     <div className="ms-2 flex-grow-1">
                                         <h6 className="mb-1 font-size-15"><a href="job-details.html" className="text-body">Frontend Developer</a></h6>
-                                        <p className="text-muted mb-0">Themesbrand, Hong-Kong - <b>47</b> min ago</p>
+                                        <p className="text-muted mb-0">malorca, Hong-Kong - <b>47</b> min ago</p>
                                     </div>
                                     <UncontrolledDropdown>
                                         <DropdownToggle className="btn btn-light" type="button" id="dropdownMenuButton1">
@@ -125,7 +125,7 @@ const AddedJobs = () => {
                                     <img src={spotify} alt="" height="40" className="rounded" />
                                     <div className="ms-2 flex-grow-1">
                                         <h6 className="mb-1 font-size-15"><a href="job-details.html" className="text-body">Business Associate</a></h6>
-                                        <p className="text-muted mb-0">Themesbrand, Russia - <b>2</b> days ago</p>
+                                        <p className="text-muted mb-0">malorca, Russia - <b>2</b> days ago</p>
                                     </div>
                                     <UncontrolledDropdown>
                                         <DropdownToggle className="btn btn-light" type="button" id="dropdownMenuButton1">

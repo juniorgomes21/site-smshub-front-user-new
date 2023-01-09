@@ -197,7 +197,7 @@ const Register = props => {
                 </p>
                 <p>
                   © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
-                  <i className="mdi mdi-heart text-danger" /> by Themesbrand
+                  <i className="mdi mdi-heart text-danger" /> by malorca
                 </p>
               </div>
             </Col>
