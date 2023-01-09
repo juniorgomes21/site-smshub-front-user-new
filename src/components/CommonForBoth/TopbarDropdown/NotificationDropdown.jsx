@@ -61,7 +61,7 @@ const NotificationDropdown = props => {
                   </h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("ZZZ Uma nova ativação")}
+                      {props.t("Uma nova ativação")}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />{" "}
@@ -82,7 +82,7 @@ const NotificationDropdown = props => {
                   <h6 className="mt-0 mb-1">Netflix</h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("ZZZ Uma nova ativação") + "."}
+                      {props.t("Uma nova ativação") + "."}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />
@@ -105,7 +105,7 @@ const NotificationDropdown = props => {
                   </h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("ZZZ Uma nova ativação")}
+                      {props.t("Uma nova ativação")}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />{" "}
@@ -128,7 +128,7 @@ const NotificationDropdown = props => {
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
                       {props.t(
-                        "ZZZ Uma nova ativação"
+                        "Uma nova ativação"
                       ) + "."}
                     </p>
                     <p className="mb-0">

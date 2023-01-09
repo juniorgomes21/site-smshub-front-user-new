@@ -17,7 +17,7 @@ import { loginUser } from "../../store/actions";
 
 // import images
 import profile from "../../assets/images/profile-img.png";
-import logo from "../../assets/images/logo.svg";
+import logo from "/img/logo.png";
 import AuthContext from "../../Context/auth";
 
 const Login = props => {
@@ -35,8 +35,8 @@ const Login = props => {
       password: '',
     },
     validationSchema: Yup.object({
-      email: Yup.string().required("Please Enter Your Email"),
-      password: Yup.string().required("Please Enter Your Password"),
+      email: Yup.string().required("Por favor introduza o seu e-mail"),
+      password: Yup.string().required("Por favor, insira sua senha"),
     }),
     onSubmit: (values) => {
       handleLogin(values.email, values.password);
@@ -78,11 +78,11 @@ const Login = props => {
                   <div>
                     <Link to="/" className="auth-logo-light">
                       <div className="avatar-md profile-user-wid mb-4">
-                        <span className="avatar-title rounded-circle bg-light">
+                        <span className="avatar-title bg-light">
                           <img
                             src={logo}
                             alt=""
-                            className="rounded-circle"
+                            className=""
                             height="34"
                           />
                         </span>
@@ -120,12 +120,12 @@ const Login = props => {
                       </div>
 
                       <div className="mb-3">
-                        <Label className="form-label">Password</Label>
+                        <Label className="form-label">Senha</Label>
                         <Input
                           name="password"
                           value={validation.values.password || ""}
                           type="password"
-                          placeholder="Enter Password"
+                          placeholder="Sua senha"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
                           invalid={
