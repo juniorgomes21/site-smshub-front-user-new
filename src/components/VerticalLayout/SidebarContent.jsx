@@ -12,6 +12,9 @@ import { Link } from "react-router-dom"
 //i18n
 import { withTranslation } from "react-i18next"
 
+//My
+import KeyIcon from '@mui/icons-material/Key';
+
 const SidebarContent = props => {
   const ref = useRef()
   // Use ComponentDidMount and ComponentDidUpdate method symultaniously
@@ -94,39 +97,52 @@ const SidebarContent = props => {
           <ul className="metismenu list-unstyled" id="side-menu">
             <li className="menu-title">{props.t("Menu")} </li>
             <li>
-              <Link to="/#" className="has-arrow">
+              <Link to="/app/store24h">
                 <i className="bx bx-home-circle"></i>
                 <span>{props.t("Dashboards")}</span>
               </Link>
+            </li>
+
+            <li>
+              <Link to="/#" className="has-arrow">
+                <KeyIcon sx={{ marginRight: '8px' }}/>
+                <span>{props.t("Api")}</span>
+              </Link>
               <ul className="sub-menu" aria-expanded="false">
                 <li>
-                  <Link to="/dashboard">{props.t("Default")}</Link>
+                  <Link to="/app/store24h/API/APIprotocoldescription">{props.t("API protocol description")}</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard-saas">{props.t("Saas")}</Link>
+                  <Link to="/app/store24h/API/getNumberStatus">
+                    {props.t("getNumbersStatus")}
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/dashboard-crypto">{props.t("Crypto")}</Link>
+                  <Link to="/#">{props.t("getBalance")}</Link>
                 </li>
                 <li>
-                  <Link to="/blog">{props.t("Blog")}</Link>
+                  <Link to="/#">{props.t("getNumber")}</Link>
                 </li>
                 <li>
-                  <Link to="/dashboard-job">
-                    <span className="badge rounded-pill text-bg-success float-end" key="t-new">New</span>
-                    {props.t("Jobs")}
+                  <Link to="/#">{props.t("setStatus")}</Link>
+                </li>
+                <li>
+                  <Link to="/#">{props.t("getStatus")}</Link>
+                </li>
+                <li>
+                  <Link to="/#">{props.t("getPrices")}</Link>
+                </li>
+                <li>
+                  <Link to="/#">
+                    {props.t("Lista de países e operadoras")}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/#">
+                    {props.t("Lista de serviços")}
                   </Link>
                 </li>
               </ul>
-            </li>
-
-            <li className="menu-title">{props.t("Apps")}</li>
-
-            <li>
-              <Link to="/calendar" className=" ">
-                <i className="bx bx-calendar"></i>
-                <span>{props.t("Calendar")}</span>
-              </Link>
             </li>
 
             <li>
@@ -135,6 +151,7 @@ const SidebarContent = props => {
                 <span>{props.t("Chat")}</span>
               </Link>
             </li>
+
             <li>
               <Link to="/apps-filemanager" >
                 <i className="bx bx-file"></i>

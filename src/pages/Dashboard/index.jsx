@@ -44,49 +44,19 @@ import { withTranslation } from "react-i18next";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 
+//My
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import logo from '/img/logo_mir.jpg';
+import mastercard from '/img/_mastercard-securecode.png';
+import visa from '/img/_Visa.png';
+import mIRaccept from '/img/MIRaccept.png';
+import mastercardLogo from '/img/Mastercard-logo.svg.png';
+import verified from '/img/_verified-by-visa.png';
+
 const Dashboard = props => {
-  const [modal, setmodal] = useState(false);
-  const [subscribemodal, setSubscribemodal] = useState(false);
-
-  const { chartsData } = useSelector(state => ({
-    chartsData: state.Dashboard.chartsData
-  }));
-
-  const reports = [
-    { title: "Orders", iconClass: "bx-copy-alt", description: "1,235" },
-    { title: "Revenue", iconClass: "bx-archive-in", description: "$35, 723" },
-    {
-      title: "Average Price",
-      iconClass: "bx-purchase-tag-alt",
-      description: "$16.2",
-    },
-  ];
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSubscribemodal(true);
-    }, 2000);
-  }, []);
-
-  const [periodData, setPeriodData] = useState([]);
-  const [periodType, setPeriodType] = useState("yearly");
-
-  useEffect(() => {
-    setPeriodData(chartsData);
-  }, [chartsData]);
-
-  const onChangeChartPeriod = pType => {
-    setPeriodType(pType);
-    dispatch(onGetChartsData(pType));
-  };
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(onGetChartsData("yearly"));
-  }, [dispatch]);
 
   //meta title
-  document.title="Dashboard | Skote - Vite React Admin & Dashboard Template";
+  document.title="Página Inicial";
 
   return (
     <React.Fragment>
@@ -94,286 +64,123 @@ const Dashboard = props => {
         <Container fluid>
           {/* Render Breadcrumb */}
           <Breadcrumbs
-            title={props.t("Dashboards")}
-            breadcrumbItem={props.t("Dashboard")}
+            title={props.t("Página Inicial")}
+            breadcrumbItem={props.t("Página Inicial")}
           />
-
-          <Row>
-            <Col xl="4">
-              <WelcomeComp />
-              <MonthlyEarning />
-            </Col>
-            <Col xl="8">
-              <Row>
-                {/* Reports Render */}
-                {reports.map((report, key) => (
-                  <Col md="4" key={"_col_" + key}>
-                    <Card className="mini-stats-wid">
-                      <CardBody>
-                        <div className="d-flex">
-                          <div className="flex-grow-1">
-                            <p className="text-muted fw-medium">
-                              {report.title}
-                            </p>
-                            <h4 className="mb-0">{report.description}</h4>
-                          </div>
-                          <div className="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                            <span className="avatar-title rounded-circle bg-primary">
-                              <i
-                                className={
-                                  "bx " + report.iconClass + " font-size-24"
-                                }
-                              ></i>
-                            </span>
-                          </div>
-                        </div>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                ))}
-              </Row>
-
-              <Card>
-                <CardBody>
-                  <div className="d-sm-flex flex-wrap">
-                    <h4 className="card-title mb-4">Email Sent</h4>
-                    <div className="ms-auto">
-                      <ul className="nav nav-pills">
-                        <li className="nav-item">
-                          <Link
-                            to="#"
-                            className={classNames(
-                              { active: periodType === "weekly" },
-                              "nav-link"
-                            )}
-                            onClick={() => {
-                              onChangeChartPeriod("weekly");
-                            }}
-                            id="one_month"
-                          >
-                            Week
-                          </Link>{" "}
-                        </li>
-                        <li className="nav-item">
-                          <Link
-                            to="#"
-                            className={classNames(
-                              { active: periodType === "monthly" },
-                              "nav-link"
-                            )}
-                            onClick={() => {
-                              onChangeChartPeriod("monthly");
-                            }}
-                            id="one_month"
-                          >
-                            Month
-                          </Link>
-                        </li>
-                        <li className="nav-item">
-                          <Link
-                            to="#"
-                            className={classNames(
-                              { active: periodType === "yearly" },
-                              "nav-link"
-                            )}
-                            onClick={() => {
-                              onChangeChartPeriod("yearly");
-                            }}
-                            id="one_month"
-                          >
-                            Year
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* <div className="clearfix"></div> */}
-                  <StackedColumnChart periodData={periodData} dataColors='["--bs-primary", "--bs-warning", "--bs-success"]'/>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col xl="4">
-              <SocialSource />
-            </Col>
-            <Col xl="4">
-              <ActivityComp />
-            </Col>
-
-            <Col xl="4">
-              <TopCities />
-            </Col>
-          </Row>
-
-          <Row>
-            <Col lg="12">
-              <LatestTranaction />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
-      {/* subscribe ModalHeader */}
-      <Modal
-        isOpen={subscribemodal}
-        role="dialog"
-        autoFocus={true}
-        centered
-        data-toggle="modal"
-        toggle={() => {
-          setSubscribemodal(!subscribemodal);
-        }}
-      >
-        <div>
-          <ModalHeader
-            className="border-bottom-0"
-            toggle={() => {
-              setSubscribemodal(!subscribemodal);
-            }}
-          ></ModalHeader>
-        </div>
-        <div className="modal-body">
-          <div className="text-center mb-4">
-            <div className="avatar-md mx-auto mb-4">
-              <div className="avatar-title bg-light  rounded-circle text-primary h1">
-                <i className="mdi mdi-email-open"></i>
-              </div>
+          <div>
+            <h1 style={styles.titulo}>Store24h - Números virtuais para verificação de conta com os preços mais baixos</h1>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Comprando números virtuais e recebendo SMS no modo automático</p>
             </div>
-
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <h4 className="text-primary">Subscribe !</h4>
-                <p className="text-muted font-size-14 mb-4">
-                  Subscribe our newletter and get notification to stay update.
-                </p>
-
-                <div
-                  className="input-group rounded bg-light"
-                >
-                  <Input
-                    type="email"
-                    className="form-control bg-transparent border-0"
-                    placeholder="Enter Email address"
-                  />
-                  <Button color="primary" type="button" id="button-addon2">
-                    <i className="bx bxs-paper-plane"></i>
-                  </Button>
-                </div>
-              </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Os preços mais baixos para números virtuais com um sistema inovador --hubFREE--</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Um grande número de números virtuais de alta qualidade para receber mensagens 24 horas por dia, 7 dias por semana</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Grande variedade de operadoras móveis e prefixos de mais de 100 países</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Interface amigável, pesquisa por país e serviço facilita a compra de um número de celular</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Receberemos SMS de quaisquer serviços e sites que exijam o registro de uma conta por SMS</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> O número de serviço é vendido apenas uma vez. Não vendemos números de segunda rodada</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Mensagens ilimitadas para alugar um número virtual por 20 minutos</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Compatibilidade total com a API sms-activate.ru</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> Se o número não recebeu a mensagem, o dinheiro é devolvido ao saldo</p>
+            </div>
+            <div style={styles.container}>
+                <ArrowForwardIosIcon/>
+                <p style={styles.paragraph}> A compra de serviços da holding Mail.ru e Mamba é possível com um saldo mínimo de 500 rublos</p>
             </div>
           </div>
-        </div>
-      </Modal>
-
-      <Modal
-        isOpen={modal}
-        role="dialog"
-        autoFocus={true}
-        centered={true}
-        className="exampleModal"
-        tabIndex="-1"
-        toggle={() => {
-          setmodal(!modal);
-        }}
-      >
-        <div>
-          <ModalHeader
-            toggle={() => {
-              setmodal(!modal);
-            }}
-          >
-            Order Details
-          </ModalHeader>
-          <ModalBody>
-            <p className="mb-2">
-              Product id: <span className="text-primary">#SK2540</span>
-            </p>
-            <p className="mb-4">
-              Billing Name: <span className="text-primary">Neal Matthews</span>
-            </p>
-
-            <div className="table-responsive">
-              <Table className="table table-centered table-nowrap">
-                <thead>
-                  <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <div>
-                        <img src={modalimage1} alt="" className="avatar-sm" />
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <h5 className="text-truncate font-size-14">
-                          Wireless Headphone (Black)
-                        </h5>
-                        <p className="text-muted mb-0">$ 225 x 1</p>
-                      </div>
-                    </td>
-                    <td>$ 255</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div>
-                        <img src={modalimage2} alt="" className="avatar-sm" />
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <h5 className="text-truncate font-size-14">
-                          Hoodie (Blue)
-                        </h5>
-                        <p className="text-muted mb-0">$ 145 x 1</p>
-                      </div>
-                    </td>
-                    <td>$ 145</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Sub Total:</h6>
-                    </td>
-                    <td>$ 400</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Shipping:</h6>
-                    </td>
-                    <td>Free</td>
-                  </tr>
-                  <tr>
-                    <td colSpan="2">
-                      <h6 className="m-0 text-end">Total:</h6>
-                    </td>
-                    <td>$ 400</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              type="button"
-              color="secondary"
-              onClick={() => {
-                setmodal(!modal);
-              }}
-            >
-              Close
-            </Button>
-          </ModalFooter>
-        </div>
-      </Modal>
+          <div>
+              <div className='flex'>
+                  <h1 style={styles.tituloFooter}>Você tem um cartão SIM? Oferecemos parceria! Obtenha renda agora!</h1>
+              </div>
+              <div style={styles.containerFooter}>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={verified} alt="verified"/>
+                  </div>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={mastercard} alt="mastercard"/>
+                  </div>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={visa} alt="visa" />
+                  </div>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={logo} alt="logo" />
+                  </div>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={mIRaccept} alt="mIRaccept"/>
+                  </div>
+                  <div style={styles.containerImg}>
+                      <img style={styles.img} src={mastercardLogo} alt="mastercardLogo"/>
+                  </div>
+              </div>
+          </div>
+        </Container>
+      </div>
     </React.Fragment>
   );
 };
+
+const styles = {
+  container: {
+    display: "flex",
+  },
+  paragraph: {
+    marginTop: '0.2rem',
+    marginBottom: 0,
+  },
+  titulo: {
+    display: 'flex',
+    marginBottom: '5%',
+    justifyContent: "center",
+  },
+
+  tituloFooter: {
+    display: 'flex',
+    marginTop: '5%',
+    marginBottom: '5%',
+    justifyContent: "center",
+  },
+
+  containerFooter: {
+    display: 'flex',
+    width: '10  0%',
+    justifyContent: 'space-evenly',
+    marginTop: '5%',
+  },
+  containerImg: {
+    display: 'flex',
+    justifyContent: ''
+  },
+  img: {
+    width: '10rem',
+    height: '5rem'
+  }
+}
 
 Dashboard.propTypes = {
   t: PropTypes.any,

@@ -70,8 +70,8 @@ import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-ver
 
 // // Dashboard
 import Dashboard from "../pages/Dashboard/index";
-import DashboardSaas from "../pages/Dashboard-saas/index";
-import DashboardCrypto from "../pages/Dashboard-crypto/index";
+import DescreptionApi from "../pages/ApiPages/DescreptionApi";
+import GetNumberStatus from "../pages/ApiPages/GetNumberStatus";
 import Blog from "../pages/Dashboard-Blog/index";
 import DashboardJob from "../pages/DashboardJob/index"
 
@@ -182,9 +182,9 @@ import ContactsList from "../pages/Contacts/ContactList/contacts-list";
 import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile";
 
 const authProtectedRoutes = [
-  { path: "/dashboard", component: Dashboard },
-  { path: "/dashboard-saas", component: DashboardSaas },
-  { path: "/dashboard-crypto", component: DashboardCrypto },
+  { path: "/app/store24h", component: Dashboard },
+  { path: "/app/store24h/API/APIprotocoldescription", component: DescreptionApi },
+  { path: "/app/store24h/API/getNumberStatus", component: GetNumberStatus },
   { path: "/blog", component: Blog },
   { path: "/dashboard-job", component: DashboardJob },
 
