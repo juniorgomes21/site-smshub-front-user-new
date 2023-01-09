@@ -36,12 +36,12 @@ const NotificationDropdown = props => {
           <div className="p-3">
             <Row className="align-items-center">
               <Col>
-                <h6 className="m-0"> {props.t("Notifications")} </h6>
+                <h6 className="m-0"> {props.t("Notificações")} </h6>
               </Col>
               <div className="col-auto">
                 <a href="#!" className="small">
                   {" "}
-                  View All
+                  Ver todas
                 </a>
               </div>
             </Row>
@@ -57,11 +57,11 @@ const NotificationDropdown = props => {
                 </div>
                 <div className="flex-grow-1">
                   <h6 className="mt-0 mb-1">
-                    {props.t("Your order is placed")}
+                    {props.t("WhatsApp")}
                   </h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("If several languages coalesce the grammar")}
+                      {props.t("ZZZ Uma nova ativação")}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />{" "}
@@ -79,10 +79,10 @@ const NotificationDropdown = props => {
                   alt="user-pic"
                 />
                 <div className="flex-grow-1">
-                  <h6 className="mt-0 mb-1">James Lemire</h6>
+                  <h6 className="mt-0 mb-1">Netflix</h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("It will seem like simplified English") + "."}
+                      {props.t("ZZZ Uma nova ativação") + "."}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />
@@ -101,11 +101,11 @@ const NotificationDropdown = props => {
                 </div>
                 <div className="flex-grow-1">
                   <h6 className="mt-0 mb-1">
-                    {props.t("Your item is shipped")}
+                    {props.t("99Food")}
                   </h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
-                      {props.t("If several languages coalesce the grammar")}
+                      {props.t("ZZZ Uma nova ativação")}
                     </p>
                     <p className="mb-0">
                       <i className="mdi mdi-clock-outline" />{" "}
@@ -124,11 +124,11 @@ const NotificationDropdown = props => {
                   alt="user-pic"
                 />
                 <div className="flex-grow-1">
-                  <h6 className="mt-0 mb-1">Salena Layfield</h6>
+                  <h6 className="mt-0 mb-1">Caixa</h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
                       {props.t(
-                        "As a skeptical Cambridge friend of mine occidental"
+                        "ZZZ Uma nova ativação"
                       ) + "."}
                     </p>
                     <p className="mb-0">
@@ -147,7 +147,7 @@ const NotificationDropdown = props => {
             >
               <i className="mdi mdi-arrow-right-circle me-1"></i>
               {" "}
-              {props.t("View all")}{" "}
+              {props.t("Ver todas")}{" "}
             </Link>
           </div>
         </DropdownMenu>

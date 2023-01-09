@@ -53,7 +53,7 @@ const DescreptionApi = props => {
     const [loading, setLoading] = useState(true);
 
     //meta title
-    document.title="History";
+    document.title="Histórico";
 
     const handleChange = (newValue) => {
         setValue(newValue);
@@ -65,8 +65,8 @@ const DescreptionApi = props => {
             <Container fluid>
             {/* Render Breadcrumb */}
             <Breadcrumbs
-                title={props.t("History")}
-                breadcrumbItem={props.t("History")}
+                title={props.t("Histórico")}
+                breadcrumbItem={props.t("Histórico")}
             />
                 <div>
                     <div style={{ display: 'flex', alignItems: 'center', marginRight: '2.5rem' , marginBottom: '2.5rem'}}>

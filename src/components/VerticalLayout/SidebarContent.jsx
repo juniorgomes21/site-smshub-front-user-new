@@ -159,7 +159,7 @@ const SidebarContent = props => {
             <li>
               <Link to="/app/store24h/history" >
                 <Article sx={{ marginRight: '8px' }}/>
-                <span>{props.t("History")}</span>
+                <span>{props.t("Histórico")}</span>
               </Link>
             </li>
             <li>

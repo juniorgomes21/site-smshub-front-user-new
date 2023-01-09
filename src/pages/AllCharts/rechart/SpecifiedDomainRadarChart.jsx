@@ -33,7 +33,7 @@ const data = [
     fullMark: 150,
   },
   {
-    subject: 'History',
+    subject: 'History4',
     A: 65,
     B: 85,
     fullMark: 150,
