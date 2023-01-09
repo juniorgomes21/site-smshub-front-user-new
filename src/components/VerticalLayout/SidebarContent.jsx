@@ -138,11 +138,6 @@ const SidebarContent = props => {
                   <Link to="/app/hub24h/API/getPrices">{props.t("getPrices")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/listaPaisesOperadoras">
-                    {props.t("Lista de países e operadoras")}
-                  </Link>
-                </li>
-                <li>
                   <Link to="/app/hub24h/API/listaServicos">
                     {props.t("Lista de serviços")}
                   </Link>

@@ -15,7 +15,6 @@ import GetNumber from "../pages/ApiPages/GetNumber";
 import SetStatus from "../pages/ApiPages/SetStatus";
 import GetStatus from "../pages/ApiPages/GetStatus";
 import GetPrices from "../pages/ApiPages/GetPrices";
-import ListaPaisesOperadoras from "../pages/ApiPages/ListaPaisesOperadoras";
 import ListaServicos from "../pages/ApiPages/ListaServicos";
 
 import OperatorServices from "../pages/OperatorServices/OperatorServices";
@@ -35,7 +34,6 @@ const publicRoutes = [
   { path: "/app/hub24h/API/APIprotocoldescription", component: DescreptionApi },
   { path: "/app/hub24h/API/getStatus", component: GetStatus },
   { path: "/app/hub24h/API/getPrices", component: GetPrices },
-  { path: "/app/hub24h/API/listaPaisesOperadoras", component: ListaPaisesOperadoras },
   { path: "/app/hub24h/API/listaServicos", component: ListaServicos },
   { path: "/app/hub24h/API/getNumberStatus", component: GetNumberStatus },
   { path: "/app/hub24h/API/getBalance", component: Balance },

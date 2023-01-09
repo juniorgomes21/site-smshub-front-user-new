@@ -17,6 +17,7 @@ import { withRouter, Link } from "react-router-dom";
 import user1 from "../../../assets/images/users/avatar-1.jpg";
 import { Key, LoginOutlined } from "@mui/icons-material";
 import AuthContext from "../../../Context/auth";
+import LocalConvenienceStoreIcon from '@mui/icons-material/LocalConvenienceStore';
 
 const ProfileMenu = (props) => {
   // Declare a new state variable, which we'll call "menu"
@@ -64,6 +65,10 @@ const ProfileMenu = (props) => {
           <Link to="/app/hub24h/configurations" className="dropdown-item">
             <Key sx={{ marginRight: '6px' }}/>
             <span>{props.t("API")}</span>
+          </Link>
+          <Link to="/#" className="dropdown-item">
+            <LocalConvenienceStoreIcon sx={{ marginRight: '6px' }}/>
+            <span>{props.t("Agente24H")}</span>
           </Link>
           <div className="dropdown-divider" />
           {
