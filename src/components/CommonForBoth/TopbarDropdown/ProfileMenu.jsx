@@ -66,7 +66,7 @@ const ProfileMenu = (props) => {
             <Key sx={{ marginRight: '6px' }}/>
             <span>{props.t("API")}</span>
           </Link>
-          <Link to="/#" className="dropdown-item">
+          <Link to="#" className="dropdown-item">
             <LocalConvenienceStoreIcon sx={{ marginRight: '6px' }}/>
             <span>{props.t("Agente24H")}</span>
           </Link>
