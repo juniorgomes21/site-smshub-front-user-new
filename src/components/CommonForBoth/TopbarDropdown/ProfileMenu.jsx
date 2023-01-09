@@ -61,7 +61,7 @@ const ProfileMenu = (props) => {
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          <Link to="/app/store24h/configurations" className="dropdown-item">
+          <Link to="/app/hub24h/configurations" className="dropdown-item">
             <Key sx={{ marginRight: '6px' }}/>
             <span>{props.t("API")}</span>
           </Link>

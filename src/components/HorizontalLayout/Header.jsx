@@ -87,8 +87,9 @@ const Header = props => {
                 <span className="logo-sm">
                   <img src={logoLightSvg} alt="" height="22" />
                 </span>
-                <span className="logo-lg">
-                  <img src={logoLight} alt="" height="40" />
+                <span style={{ display: 'flex', marginTop: '2.5rem', marginLeft: '2rem' }} className="logo-lg">
+                  <img style={{ marginTop: '0.1rem' }} src={logoLight} alt="" height="40" />
+                  <p style={{ marginLeft: '0.3rem', color: '#f7a447' }}> - HUB</p>
                 </span>
               </Link>
             </div>

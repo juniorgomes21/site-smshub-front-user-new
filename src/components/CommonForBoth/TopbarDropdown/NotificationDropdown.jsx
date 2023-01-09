@@ -52,7 +52,7 @@ const NotificationDropdown = props => {
               <div className="d-flex">
                 <div className="avatar-xs me-3">
                   <span className="avatar-title bg-primary rounded-circle font-size-16">
-                    <i className="bx bx-cart" />
+                    <img style={{ width: '3rem', height: '2rem' }} src={'/img/servicesImg/wa0.png'} alt="..." />
                   </span>
                 </div>
                 <div className="flex-grow-1">
@@ -73,11 +73,11 @@ const NotificationDropdown = props => {
             </Link>
             <Link to="" className="text-reset notification-item">
               <div className="d-flex">
-                <img
-                  src={avatar3}
-                  className="me-3 rounded-circle avatar-xs"
-                  alt="user-pic"
-                />
+                <div className="avatar-xs me-3">
+                  <span className="avatar-title bg-primary rounded-circle font-size-16">
+                    <img style={{ width: '3rem', height: '2rem' }} src={'/img/servicesImg/nf0.png'} alt="..." />
+                  </span>
+                </div>
                 <div className="flex-grow-1">
                   <h6 className="mt-0 mb-1">Netflix</h6>
                   <div className="font-size-12 text-muted">
@@ -95,13 +95,13 @@ const NotificationDropdown = props => {
             <Link to="" className="text-reset notification-item">
               <div className="d-flex">
                 <div className="avatar-xs me-3">
-                  <span className="avatar-title bg-success rounded-circle font-size-16">
-                    <i className="bx bx-badge-check" />
+                  <span className="avatar-title bg-primary rounded-circle font-size-16">
+                    <img style={{ width: '3rem', height: '2rem' }} src={'/img/servicesImg/tg0.png'} alt="..." />
                   </span>
                 </div>
                 <div className="flex-grow-1">
                   <h6 className="mt-0 mb-1">
-                    {props.t("99Food")}
+                    {props.t("Telegram")}
                   </h6>
                   <div className="font-size-12 text-muted">
                     <p className="mb-1">
@@ -118,11 +118,11 @@ const NotificationDropdown = props => {
 
             <Link to="" className="text-reset notification-item">
               <div className="d-flex">
-                <img
-                  src={avatar4}
-                  className="me-3 rounded-circle avatar-xs"
-                  alt="user-pic"
-                />
+                <div className="avatar-xs me-3">
+                  <span className="avatar-title bg-primary rounded-circle font-size-16">
+                    <img style={{ width: '3rem', height: '2rem' }} src={'/img/servicesImg/my0.png'} alt="..." />
+                  </span>
+                </div>
                 <div className="flex-grow-1">
                   <h6 className="mt-0 mb-1">Caixa</h6>
                   <div className="font-size-12 text-muted">

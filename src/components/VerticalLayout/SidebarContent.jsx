@@ -14,6 +14,7 @@ import { withTranslation } from "react-i18next"
 
 //My
 import KeyIcon from '@mui/icons-material/Key';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AccountBox from '@mui/icons-material/AccountBox';
 import Article from '@mui/icons-material/Article';
 import Sms from '@mui/icons-material/Sms';
@@ -101,7 +102,7 @@ const SidebarContent = props => {
           <ul className="metismenu list-unstyled" id="side-menu">
             <li className="menu-title">{props.t("Menu")} </li>
             <li>
-              <Link to="/app/store24h">
+              <Link to="/app/hub24h">
                 <i className="bx bx-home-circle"></i>
                 <span>{props.t("Dashboards")}</span>
               </Link>
@@ -114,35 +115,35 @@ const SidebarContent = props => {
               </Link>
               <ul className="sub-menu" aria-expanded="false">
                 <li>
-                  <Link to="/app/store24h/API/APIprotocoldescription">{props.t("API protocol description")}</Link>
+                  <Link to="/app/hub24h/API/APIprotocoldescription">{props.t("API protocol description")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/getNumberStatus">
+                  <Link to="/app/hub24h/API/getNumberStatus">
                     {props.t("getNumbersStatus")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/getBalance">{props.t("getBalance")}</Link>
+                  <Link to="/app/hub24h/API/getBalance">{props.t("getBalance")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/getNumber">{props.t("getNumber")}</Link>
+                  <Link to="/app/hub24h/API/getNumber">{props.t("getNumber")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/setStatus">{props.t("setStatus")}</Link>
+                  <Link to="/app/hub24h/API/setStatus">{props.t("setStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/getStatus">{props.t("getStatus")}</Link>
+                  <Link to="/app/hub24h/API/getStatus">{props.t("getStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/getPrices">{props.t("getPrices")}</Link>
+                  <Link to="/app/hub24h/API/getPrices">{props.t("getPrices")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/listaPaisesOperadoras">
+                  <Link to="/app/hub24h/API/listaPaisesOperadoras">
                     {props.t("Lista de países e operadoras")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/store24h/API/listaServicos">
+                  <Link to="/app/hub24h/API/listaServicos">
                     {props.t("Lista de serviços")}
                   </Link>
                 </li>
@@ -150,26 +151,33 @@ const SidebarContent = props => {
             </li>
 
             <li>
-              <Link to="/app/store24h/API/operatorServices" className="">
+              <Link to="/app/hub24h/API/operatorServices" className="">
                 <AccountBox sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Serviços")}</span>
               </Link>
             </li>
 
             <li>
-              <Link to="/app/store24h/history" >
+              <Link to="/app/hub24h/CompraCredito" >
+                <AddShoppingCartIcon sx={{ marginRight: '8px' }}/>
+                <span>{props.t("Comprar Crédito")}</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/app/hub24h/history" >
                 <Article sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Histórico")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/store24h/activations" >
+              <Link to="/app/hub24h/activations" >
                 <Sms sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Ativações")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/store24h/configurations" >
+              <Link to="/app/hub24h/configurations" >
                 <Settings sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Configurações")}</span>
               </Link>

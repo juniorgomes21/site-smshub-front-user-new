@@ -84,11 +84,6 @@ const DescreptionApi = props => {
             />
               <div>
                   <p>Para melhorar a segurança, você pode ativar a autenticação de dois fatores instalando o aplicativo Google Authenticator gratuito. Você pode baixá-lo para o seu telefone para as plataformas Google Android e iOS. Depois de ativar a autenticação de dois fatores, você precisará inserir um código sempre que fizer login na sua conta e alterar as configurações no site. </p>
-                  <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: 40 }}>
-                      <h3>
-                          Faça login para ter acesso a sua chave de API.
-                      </h3>
-                  </div>
                   {
                   !logado ?
                           <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: 40 }}>
@@ -124,52 +119,55 @@ const DescreptionApi = props => {
                           </>
                   }
               </div>
-              <Box
-                  component="form"
-                  sx={{
-                      '& > :not(style)': { m: 1, width: '25ch' },
-                      display: 'flex',
-                      flexDirection: 'column',
+                {
+                  logado &&
+                    <Box
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: '25ch' },
+                            display: 'flex',
+                            flexDirection: 'column',
 
-                  }}
-                  noValidate
-                  autoComplete="off"
-              >
-                <TextField
-                    id="outlined-basic"
-                    label="Senha Atual"
-                    variant="outlined"
-                    type='password'
-                    onChange={e => setCurrentPassword(e.target.value)}
-                />
-                <TextField
-                    id="outlined-basic"
-                    label="Nova Senha"
-                    variant="outlined"
-                    type='password'
-                    onChange={e => setNewPassword(e.target.value)}
-                />
-                <TextField
-                    id="outlined-basic"
-                    label="Repita a nova senha"
-                    variant="outlined"
-                    type='password'
-                    onChange={e => setNewPassword2(e.target.value)}
-                />
-                <Stack spacing={2} direction="row">
-                    {
-                        loading ? 
-                            <CircularProgress />
-                        :
-                            <Button
-                                variant="contained"
-                                onClick={apiChangePassword}
-                            >
-                                Alterar
-                            </Button>
-                    }
-                </Stack>
-              </Box>
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <TextField
+                            id="outlined-basic"
+                            label="Senha Atual"
+                            variant="outlined"
+                            type='password'
+                            onChange={e => setCurrentPassword(e.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Nova Senha"
+                            variant="outlined"
+                            type='password'
+                            onChange={e => setNewPassword(e.target.value)}
+                        />
+                        <TextField
+                            id="outlined-basic"
+                            label="Repita a nova senha"
+                            variant="outlined"
+                            type='password'
+                            onChange={e => setNewPassword2(e.target.value)}
+                        />
+                        <Stack spacing={2} direction="row">
+                            {
+                                loading ? 
+                                    <CircularProgress />
+                                :
+                                    <Button
+                                        variant="contained"
+                                        onClick={apiChangePassword}
+                                    >
+                                        Alterar
+                                    </Button>
+                            }
+                        </Stack>
+                    </Box>
+                }
           </Container>
           <Snackbar
               open={open}
