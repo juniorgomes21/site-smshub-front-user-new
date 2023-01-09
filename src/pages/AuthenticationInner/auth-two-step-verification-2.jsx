@@ -3,14 +3,16 @@ import CarouselPage from "./CarouselPage"
 
 // import images
 import logodark from "../../assets/images/logo-dark.png"
-import logolight from "../../assets/images/logo-light.png"
+// import logolight from "../../assets/images/logo-light.png"
+import logolight from "/img/logo.png";
+
 import { Col, Form, Input, Label, Row } from "reactstrap"
 import { Link } from "react-router-dom"
 
 const TwostepVerification2 = () => {
 
   //meta title
-  document.title = "Two Step Verification 2 | Skote - Vite React Admin & Dashboard Template";
+  document.title = "Two Step Verification 2 | Ap Codes - Vite React Admin & Dashboard Template";
 
   return (
     <React.Fragment>
@@ -117,7 +119,7 @@ const TwostepVerification2 = () => {
 
                     <div className="mt-4 mt-md-5 text-center">
                       <p className="mb-0">
-                        © {new Date().getFullYear()} Skote. Crafted with{" "}
+                        © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
                         Themesbrand
                       </p>

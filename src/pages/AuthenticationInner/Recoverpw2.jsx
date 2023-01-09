@@ -6,7 +6,9 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import logodark from "../../assets/images/logo-dark.png";
-import logolight from "../../assets/images/logo-light.png";
+// import logolight from "../../assets/images/logo-light.png";
+import logolight from "/img/logo.png";
+
 import CarouselPage from "./CarouselPage";
 
 const Recoverpw2 = () => {

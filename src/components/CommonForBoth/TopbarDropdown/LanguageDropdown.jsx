@@ -36,14 +36,6 @@ const LanguageDropdown = () => {
   return (
     <>
       <Dropdown isOpen={menu} toggle={toggle} className="d-inline-block">
-        <DropdownToggle className="btn header-item " tag="button">
-          <img
-            src={get(languages, `${selectedLang}.flag`)}
-            alt="Skote"
-            height="16"
-            className="me-1"
-          />
-        </DropdownToggle>
         <DropdownMenu className="language-switch dropdown-menu-end">
           {map(Object.keys(languages), key => (
             <DropdownItem

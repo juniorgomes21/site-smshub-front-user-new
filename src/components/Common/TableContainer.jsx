@@ -27,25 +27,6 @@ function GlobalFilter({
   return (
     <Col sm={4}>
       <div className="search-box me-2 mb-2 d-inline-block">
-        <div className="position-relative">
-          <label htmlFor="search-bar-0" className="search-label">
-            <span id="search-bar-0-label" className="sr-only">
-              Search this table
-            </span>
-            <input
-              onChange={e => {
-                setValue(e.target.value);
-                onChange(e.target.value);
-              }}
-              id="search-bar-0"
-              type="text"
-              className="form-control"
-              placeholder={`${count} records...`}
-              value={value || ""}
-            />
-          </label>
-          <i className="bx bx-search-alt search-icon"></i>
-        </div>
       </div>
     </Col>
   );

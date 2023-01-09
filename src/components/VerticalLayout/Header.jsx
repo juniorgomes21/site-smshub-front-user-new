@@ -21,9 +21,11 @@ import dribbble from "../../assets/images/brands/dribbble.png";
 import dropbox from "../../assets/images/brands/dropbox.png";
 import mail_chimp from "../../assets/images/brands/mail_chimp.png";
 import slack from "../../assets/images/brands/slack.png";
+import logo from "/img/logo.png";
 
-import logo from "../../assets/images/logo.svg";
-import logoLightSvg from "../../assets/images/logo-light.svg";
+// import logo from "../../assets/images/logo.svg";
+// import logoLightSvg from "../../assets/images/logo-light.svg";
+import logoLightSvg from "/img/logo.png";
 
 //i18n
 import { withTranslation } from "react-i18next";
@@ -109,14 +111,6 @@ const Header = props => {
             </button>
 
             <form className="app-search d-none d-lg-block">
-              <div className="position-relative">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder={props.t("Search") + "..."}
-                />
-                <span className="bx bx-search-alt" />
-              </div>
             </form>
 
             <Dropdown
@@ -126,14 +120,6 @@ const Header = props => {
                 setmegaMenu(!megaMenu);
               }}
             >
-              <DropdownToggle
-                className="btn header-item "
-                caret
-                tag="button"
-              >
-                {" "}
-                {props.t("Mega Menu")} <i className="mdi mdi-chevron-down" />
-              </DropdownToggle>
               <DropdownMenu className="dropdown-megamenu">
                 <Row>
                   <Col sm={8}>
@@ -271,16 +257,6 @@ const Header = props => {
           </div>
           <div className="d-flex">
             <div className="dropdown d-inline-block d-lg-none ms-2">
-              <button
-                onClick={() => {
-                  setsearch(!search);
-                }}
-                type="button"
-                className="btn header-item noti-icon "
-                id="page-header-search-dropdown"
-              >
-                <i className="mdi mdi-magnify" />
-              </button>
               <div
                 className={
                   search
@@ -318,12 +294,6 @@ const Header = props => {
                 setsocialDrp(!socialDrp);
               }}
             >
-              <DropdownToggle
-                className="btn header-item noti-icon "
-                tag="button"
-              >
-                <i className="bx bx-customize" />
-              </DropdownToggle>
               <DropdownMenu className="dropdown-menu-lg dropdown-menu-end">
                 <div className="px-lg-2">
                   <Row className="no-gutters">
@@ -386,20 +356,6 @@ const Header = props => {
 
             <NotificationDropdown />
             <ProfileMenu />
-            
-            <div
-               onClick={() => {
-                props.showRightSidebarAction(!props.showRightSidebar);
-              }}
-              className="dropdown d-inline-block"
-            >
-              <button
-                type="button"
-                className="btn header-item noti-icon right-bar-toggle "
-              >
-                <i className="bx bx-cog bx-spin" />
-              </button>
-            </div>
           </div>
         </div>
       </header>

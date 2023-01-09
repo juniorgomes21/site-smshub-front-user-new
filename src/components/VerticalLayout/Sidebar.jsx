@@ -8,10 +8,15 @@ import { withTranslation } from "react-i18next";
 import SidebarContent from "./SidebarContent";
 
 import { Link } from "react-router-dom";
+import logo from "/img/logo.png";
 
-import logo from "../../assets/images/logo.svg";
-import logoLightPng from "../../assets/images/logo-light.png";
+// import logo from "../../assets/images/logo.svg";
+// import logoLightPng from "../../assets/images/logo-light.png";
+import logoLightPng from "/img/logo.png";
+
 import logoLightSvg from "../../assets/images/logo-light.svg";
+import lightlogo from "/img/logo.png";
+
 import logoDark from "../../assets/images/logo-dark.png";
 
 const Sidebar = props => {
@@ -34,7 +39,7 @@ const Sidebar = props => {
               <img src={logoLightSvg} alt="" height="22" />
             </span>
             <span className="logo-lg">
-              <img src={logoLightPng} alt="" height="19" />
+              <img src={logoLightPng} alt="" height="40" />
             </span>
           </Link>
         </div>

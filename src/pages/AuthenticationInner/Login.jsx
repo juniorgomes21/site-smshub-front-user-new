@@ -11,14 +11,15 @@ import { useFormik } from "formik";
 
 // import images
 import profile from "../../assets/images/profile-img.png";
-import logo from "../../assets/images/logo.svg";
-import lightlogo from "../../assets/images/logo-light.svg";
+// import logo from "../../assets/images/logo.svg";
+// import lightlogo from "../../assets/images/logo-light.svg";
+import lightlogo from "/img/logo.png";
 
 const Login = () => {
   const [show, setShow] = useState(false);
 
   //meta title
-  document.title = "Login | Skote - Vite React Admin & Dashboard Template";
+  document.title = "Login | Ap Codes - Vite React Admin & Dashboard Template";
 
   // Form validation 
   const validation = useFormik({
@@ -209,7 +210,7 @@ const Login = () => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

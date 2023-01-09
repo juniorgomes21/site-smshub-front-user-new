@@ -3,7 +3,9 @@ import CarouselPage from "./CarouselPage"
 
 // import images
 import logodark from "../../assets/images/logo-dark.png"
-import logolight from "../../assets/images/logo-light.png"
+// import logolight from "../../assets/images/logo-light.png"
+import logolight from "/img/logo.png";
+
 import { Col, Container, Row } from "reactstrap"
 import { Link } from "react-router-dom"
 

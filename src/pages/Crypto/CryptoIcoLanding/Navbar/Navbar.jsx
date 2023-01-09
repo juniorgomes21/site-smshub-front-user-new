@@ -13,7 +13,8 @@ import ScrollspyNav from "./scrollSpy";
 
 //Import Images
 import logodark from "../../../../assets/images/logo-dark.png";
-import logolight from "../../../../assets/images/logo-light.png";
+// import logolight from "../../../../assets/images/logo-light.png";
+import logolight from "/img/logo.png";
 
 const navItems = [
   { id: 1, idnm: "home", navheading: "Home" },
@@ -44,14 +45,14 @@ const Navbar_Page = props => {
               <img
                 src={logodark}
                 alt=""
-                height="19"
+                height="40"
                 className="logo logo-dark"
               />
             ) : (
               <img
                 src={logolight}
                 alt=""
-                height="19"
+                height="40"
                 className="logo logo-light"
               />
             )}

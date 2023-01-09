@@ -16,10 +16,15 @@ import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDr
 import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu";
 
 import megamenuImg from "../../assets/images/megamenu-img.png";
-import logo from "../../assets/images/logo.svg";
-import logoLight from "../../assets/images/logo-light.png";
-import logoLightSvg from "../../assets/images/logo-light.svg";
+// import logo from "../../assets/images/logo.svg";
+import logo from "/img/logo.png";
+
+// import logoLight from "../../assets/images/logo-light.png";
+import logoLight from "/img/logo.png";
+
+// import logoLightSvg from "../../assets/images/logo-light.svg";
 import logoDark from "../../assets/images/logo-dark.png";
+import logoLightSvg from "/img/logo.png";
 
 // import images
 import github from "../../assets/images/brands/github.png";
@@ -83,7 +88,7 @@ const Header = props => {
                   <img src={logoLightSvg} alt="" height="22" />
                 </span>
                 <span className="logo-lg">
-                  <img src={logoLight} alt="" height="19" />
+                  <img src={logoLight} alt="" height="40" />
                 </span>
               </Link>
             </div>
@@ -116,13 +121,6 @@ const Header = props => {
               isOpen={menu}
               toggle={() => setMenu(!menu)}
             >
-              <DropdownToggle
-                className="btn header-item "
-                caret
-                tag="button"
-              >
-                {props.t("Mega Menu")} <i className="mdi mdi-chevron-down" />
-              </DropdownToggle>
               <DropdownMenu className="dropdown-megamenu">
                 <Row>   
                   <Col sm={8}>
@@ -261,14 +259,6 @@ const Header = props => {
 
           <div className="d-flex">
             <div className="dropdown d-inline-block d-lg-none ms-2">
-              <button
-                type="button"
-                className="btn header-item noti-icon "
-                id="page-header-search-dropdown"
-                onClick={() => setSearch(!isSearch)}
-              >
-                <i className="mdi mdi-magnify" />
-              </button>
               <div
                 className={
                   isSearch
@@ -306,13 +296,6 @@ const Header = props => {
                 setsocialDrp(!socialDrp);
               }}
             >
-              <DropdownToggle
-                className="btn header-item noti-icon "
-                caret
-                tag="button"
-              >
-                <i className="bx bx-customize" />
-              </DropdownToggle>
               <DropdownMenu className="dropdown-menu-lg dropdown-menu-end">
                 <div className="px-lg-2">
                   <Row className="no-gutters">
@@ -358,35 +341,8 @@ const Header = props => {
                 </div>
               </DropdownMenu>
             </Dropdown>
-
-            <div className="dropdown d-none d-lg-inline-block ms-1">
-              <button
-                type="button"
-                className="btn header-item noti-icon "
-                onClick={() => {
-                  toggleFullscreen();
-                }}
-                data-toggle="fullscreen"
-              >
-                <i className="bx bx-fullscreen" />
-              </button>
-            </div>
-
             <NotificationDropdown />
-
             <ProfileMenu />
-
-            <div className="dropdown d-inline-block">
-              <button
-                onClick={() => {
-                  props.showRightSidebarAction(!props.showRightSidebar);
-                }}
-                type="button"
-                className="btn header-item noti-icon right-bar-toggle "
-              >
-                <i className="bx bx-cog bx-spin" />
-              </button>
-            </div>
           </div>
         </div>
       </header>

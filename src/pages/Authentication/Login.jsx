@@ -21,7 +21,7 @@ import logo from "../../assets/images/logo.svg";
 
 const Login = props => {
   //meta title
-  document.title = "Login | Skote - Vite React Admin & Dashboard Template";
+  document.title = "Login | Ap Codes - Vite React Admin & Dashboard Template";
   const dispatch = useDispatch();
 
   const validation = useFormik({
@@ -62,8 +62,8 @@ const Login = props => {
                   <Row>
                     <Col xs={7}>
                       <div className="text-primary p-4">
-                        <h5 className="text-primary">Welcome Back !</h5>
-                        <p>Sign in to continue to Skote.</p>
+                        <h5 className="text-primary">Bem vindo ao sms24h !</h5>
+                        <p>Faça seu login.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -134,33 +134,19 @@ const Login = props => {
                         ) : null}
                       </div>
 
-                      <div className="form-check">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="customControlInline"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="customControlInline"
-                        >
-                          Remember me
-                        </label>
-                      </div>
-
                       <div className="mt-3 d-grid">
                         <button
                           className="btn btn-primary btn-block"
                           type="submit"
                         >
-                          Log In
+                          Login
                         </button>
                       </div>
 
                       <div className="mt-4 text-center">
                         <Link to="/forgot-password" className="text-muted">
                           <i className="mdi mdi-lock me-1" />
-                          Forgot your password?
+                          Esqueceu sua senha?
                         </Link>
                       </div>
                     </Form>
@@ -169,14 +155,7 @@ const Login = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Don&#39;t have an account ?{" "}
-                  <Link to="/register" className="fw-medium text-primary">
-                    {" "}
-                    Signup now{" "}
-                  </Link>{" "}
-                </p>
-                <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

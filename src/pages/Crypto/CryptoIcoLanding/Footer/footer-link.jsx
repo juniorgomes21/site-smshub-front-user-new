@@ -2,7 +2,8 @@ import React from "react"
 import { Row, Col } from "reactstrap"
 
 //Import Images
-import logolight from "../../../../assets/images/logo-light.png"
+// import logolight from "../../../../assets/images/logo-light.png"
+import logolight from "/img/logo.png";
 
 const FooterLink = () => {
   return (

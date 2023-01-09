@@ -43,7 +43,7 @@ const ForgetPasswordPage = () => {
                     <Col className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Welcome Back !</h5>
-                        <p>Sign in to continue to Skote.</p>
+                        <p>Sign in to continue to Ap Codes.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -80,7 +80,7 @@ const ForgetPasswordPage = () => {
                         <Input
                           name="email"
                           className="form-control"
-                          placeholder="Enter email"
+                          placeholder="Seu email"
                           type="email"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
@@ -99,7 +99,7 @@ const ForgetPasswordPage = () => {
                             className="btn btn-primary w-md "
                             type="submit"
                           >
-                            Reset
+                            Enviar
                           </button>
                         </Col>
                       </Row>
@@ -109,7 +109,7 @@ const ForgetPasswordPage = () => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Go back to{" "}
+                  Voltar para o {" "}
                   <Link
                     to="pages-login"
                     className="font-weight-medium text-primary"
@@ -118,7 +118,7 @@ const ForgetPasswordPage = () => {
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

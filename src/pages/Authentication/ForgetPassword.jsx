@@ -20,7 +20,7 @@ import logo from "../../assets/images/logo.svg";
 
 const ForgetPasswordPage = props => {
   //meta title
-  document.title="Forget Password | Skote - Vite React Admin & Dashboard Template";
+  document.title="Forget Password | Ap Codes - Vite React Admin & Dashboard Template";
   const dispatch = useDispatch();
 
   const validation = useFormik({
@@ -60,7 +60,7 @@ const ForgetPasswordPage = props => {
                     <Col xs={7}>
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Welcome Back !</h5>
-                        <p>Sign in to continue to Skote.</p>
+                        <p>Sign in to continue to Ap Codes.</p>
                       </div>
                     </Col>
                     <Col className="col-5 align-self-end">
@@ -108,7 +108,7 @@ const ForgetPasswordPage = props => {
                         <Input
                           name="email"
                           className="form-control"
-                          placeholder="Enter email"
+                          placeholder="Seu email"
                           type="email"
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
@@ -127,7 +127,7 @@ const ForgetPasswordPage = props => {
                             className="btn btn-primary w-md "
                             type="submit"
                           >
-                            Reset
+                            Enviar
                           </button>
                         </Col>
                       </Row>
@@ -137,13 +137,13 @@ const ForgetPasswordPage = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  Go back to{" "}
+                  Voltar para o {" "}
                   <Link to="login" className="font-weight-medium text-primary">
                     Login
                   </Link>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
               </div>

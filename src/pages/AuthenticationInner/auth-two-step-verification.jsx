@@ -14,12 +14,13 @@ import {
 
 // import images
 import logodark from "../../assets/images/logo-dark.png"
-import logolight from "../../assets/images/logo-light.png"
+// import logolight from "../../assets/images/logo-light.png"
+import logolight from "/img/logo.png";
 
 const TwostepVerification = () => {
 
   //meta title
-  document.title = "Two Step Verification | Skote - Vite React Admin & Dashboard Template";
+  document.title = "Two Step Verification | Ap Codes - Vite React Admin & Dashboard Template";
 
   return (
     <React.Fragment>
@@ -136,7 +137,7 @@ const TwostepVerification = () => {
                   </a>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                 </p>
               </div>

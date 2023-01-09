@@ -208,9 +208,6 @@ const IconBoxicons = () => {
                       <i className="bx bx-radio"></i> bx bx-radio
                     </Col>
                     <Col xl={3} lg={4} sm={6}>
-                      <i className="bx bx-customize"></i> bx bx-customize
-                    </Col>
-                    <Col xl={3} lg={4} sm={6}>
                       <i className="bx bx-brush-alt"></i> bx bx-brush-alt
                     </Col>
                     <Col xl={3} lg={4} sm={6}>

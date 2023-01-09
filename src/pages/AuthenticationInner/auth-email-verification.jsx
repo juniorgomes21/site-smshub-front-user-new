@@ -4,12 +4,13 @@ import { Card, CardBody, Col, Container, Row } from "reactstrap"
 
 // import images
 import logodark from "../../assets/images/logo-dark.png"
-import logolight from "../../assets/images/logo-light.png"
+// import logolight from "../../assets/images/logo-light.png"
+import logolight from "/img/logo.png";
 
 const EmailVerification = () => {
 
   //meta title
-  document.title="Email Verification | Skote - Vite React Admin & Dashboard Template";
+  document.title="Email Verification | Ap Codes - Vite React Admin & Dashboard Template";
 
   return (
     <React.Fragment>
@@ -78,7 +79,7 @@ const EmailVerification = () => {
                   </a>{" "}
                 </p>
                 <p>
-                  © {new Date().getFullYear()} Skote. Crafted with{" "}
+                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                 </p>
               </div>

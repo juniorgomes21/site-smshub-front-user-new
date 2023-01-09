@@ -80,6 +80,12 @@ import GetPrices from "../pages/ApiPages/GetPrices";
 import ListaPaisesOperadoras from "../pages/ApiPages/ListaPaisesOperadoras";
 import ListaServicos from "../pages/ApiPages/ListaServicos";
 
+import OperatorServices from "../pages/OperatorServices/OperatorServices";
+import History from "../pages/History/History";
+import Activations from "../pages/Activations/Activations";
+import Configurations from "../pages/ConfigurationsPage/Configurations";
+
+
 // //Crypto
 import CryptoWallet from "../pages/Crypto/CryptoWallet/crypto-wallet";
 import CryptoBuySell from "../pages/Crypto/crypto-buy-sell";
@@ -197,6 +203,12 @@ const authProtectedRoutes = [
   { path: "/app/store24h/API/getPrices", component: GetPrices },
   { path: "/app/store24h/API/listaPaisesOperadoras", component: ListaPaisesOperadoras },
   { path: "/app/store24h/API/listaServicos", component: ListaServicos },
+
+  { path: "/app/store24h/API/operatorServices", component: OperatorServices },
+  { path: "/app/store24h/history", component: History },
+  { path: "/app/store24h/activations", component: Activations },
+  { path: "/app/store24h/configurations", component: Configurations },
+
 
   //   //Crypto
   { path: "/crypto-wallet", component: CryptoWallet },
@@ -350,7 +362,6 @@ const publicRoutes = [
   { path: "/logout", component: Logout },
   { path: "/login", component: Login },
   { path: "/forgot-password", component: ForgetPwd },
-  { path: "/register", component: Register },
 
   { path: "/pages-maintenance", component: PagesMaintenance },
   { path: "/pages-comingsoon", component: PagesComingsoon },
