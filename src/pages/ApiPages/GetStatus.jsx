@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Container,
 } from "reactstrap";
@@ -20,8 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-// import AuthContext from '../../../api/Context/auth';
-// import { getApiKeyAsyncStorage } from '../../../api/isValidToken/isValidToken';
+import AuthContext from "../../Context/auth";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -77,7 +76,7 @@ const rows3 = [
 ];
 
 const GetStatus = props => {
-
+    const { logado, apiKey } = useContext(AuthContext);
   //meta title
   document.title="API getStatus";
 
@@ -90,24 +89,20 @@ const GetStatus = props => {
             title={props.t("API getStatus")}
             breadcrumbItem={props.t("API get_Status")}
           />
-                      <div>
-                <p>Obter status:</p>
-                {/* {
-                logado ?
-                    <div style={{ display: 'flex' }}>
-                        <ArrowForwardIcon />
-                        <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getBalance`}</p>
-                    </div>
-                :
-                    <div style={{ display: 'flex' }}>
-                        <ArrowForwardIcon />
-                        <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getBalance</p>
-                    </div>
-                } */}
-                <div style={{ display: 'flex' }}>
-                    <ArrowForwardIcon />
-                    <p style={styles.paragraph}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getBalance</p>
-                </div>
+                <div>
+                    <p>Obter status:</p>
+                    {
+                    logado ?
+                        <div style={{ display: 'flex' }}>
+                            <ArrowForwardIcon />
+                            <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getBalance`}</p>
+                        </div>
+                    :
+                        <div style={{ display: 'flex' }}>
+                            <ArrowForwardIcon />
+                            <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getBalance</p>
+                        </div>
+                    }
                 <h4 style={styles.tituloTable}>Parâmetros de entrada</h4>
                 <div>
                     <TableContainer component={Paper}>

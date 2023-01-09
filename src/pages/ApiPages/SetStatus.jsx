@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Container,
 } from "reactstrap";
@@ -20,6 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import AuthContext from "../../Context/auth";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -78,7 +79,7 @@ const rows3 = [
 ];
 
 const SetStatus = props => {
-
+    const { logado, apiKey } = useContext(AuthContext);
   //meta title
   document.title="API setStatus";
 
@@ -106,10 +107,18 @@ const SetStatus = props => {
                 <p style={styles.paragraph}>6 - Confirme o código SMS e conclua a ativação</p>
 
                 <p style={{ marginTop: '3%' }}>Alterar status:</p>
-                <div style={{ display: 'flex' }}>
-                    <ArrowForwardIcon />
-                    <p style={styles.paragraph}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=setStatus&status=STATUS&id=ID</p>
-                </div>
+                {
+                    logado ?
+                        <div style={{ display: 'flex' }}>
+                            <ArrowForwardIcon />
+                            <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=setStatus&status=STATUS&id=ID`}</p>
+                        </div>
+                    :
+                        <div style={{ display: 'flex' }}>
+                            <ArrowForwardIcon />
+                            <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=setStatus&status=STATUS&id=ID</p>
+                        </div>
+                }
                 <h4 style={styles.tituloTable}>Parâmetros de entrada</h4>
                 <div className='flex w-11/12'>
                     <TableContainer component={Paper}>

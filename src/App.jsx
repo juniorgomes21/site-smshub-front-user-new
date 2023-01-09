@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import React from "react"
+import React, { useContext } from "react"
 
 import { Switch, BrowserRouter as Router } from "react-router-dom"
 import { connect } from "react-redux"
 
 // Import Routes all
-import { authProtectedRoutes,publicRoutes } from "./routes"
+import { authProtectedRoutes, publicRoutes } from "./routes"
 
 // Import all middleware
 import Authmiddleware from "./routes/route"
@@ -22,6 +22,7 @@ import "./assets/scss/theme.scss"
 // import { initFirebaseBackend } from "./helpers/firebase_helper"
 
 import fakeBackend from "/src/helpers/AuthType/fakeBackend";
+import AuthContext from './Context/auth'
 
 // Activating fake backend
 fakeBackend();
@@ -41,7 +42,7 @@ fakeBackend();
 // initFirebaseBackend(firebaseConfig)
 
 const App = props => {
-
+  const { logado } = useContext(AuthContext);
   function getLayout() {
     let layoutCls = VerticalLayout
     switch (props.layout.layoutType) {
@@ -56,6 +57,7 @@ const App = props => {
   }
                 
   const Layout = getLayout()
+
   return (
     <React.Fragment>
       <Router>
@@ -63,10 +65,11 @@ const App = props => {
           {publicRoutes.map((route, idx) => (
             <Authmiddleware
               path={route.path}
-              layout={NonAuthLayout}
+              layout={Layout}
               component={route.component}
               key={idx}
               isAuthProtected={false}
+              logged={logado}
               exact
             />
           ))}
@@ -78,6 +81,7 @@ const App = props => {
               component={route.component}
               key={idx}
               isAuthProtected={true}
+              logged={logado}
               exact
             />
           ))}

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useContext } from "react";
 
 import { Row, Col, CardBody, Card, Alert, Container, Form, Input, FormFeedback, Label } from "reactstrap";
 
@@ -18,8 +18,10 @@ import { loginUser } from "../../store/actions";
 // import images
 import profile from "../../assets/images/profile-img.png";
 import logo from "../../assets/images/logo.svg";
+import AuthContext from "../../Context/auth";
 
 const Login = props => {
+  const { handleLogin } = useContext(AuthContext);
   //meta title
   document.title = "Login | Ap Codes - Vite React Admin & Dashboard Template";
   const dispatch = useDispatch();
@@ -29,15 +31,16 @@ const Login = props => {
     enableReinitialize: true,
 
     initialValues: {
-      email: "admin@themesbrand.com" || '',
-      password: "123456" || '',
+      email: '',
+      password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string().required("Please Enter Your Email"),
       password: Yup.string().required("Please Enter Your Password"),
     }),
     onSubmit: (values) => {
-      dispatch(loginUser(values, props.history));
+      handleLogin(values.email, values.password);
+      // dispatch(loginUser(values, props.history));
     }
   });
 
@@ -155,8 +158,8 @@ const Login = props => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  © {new Date().getFullYear()} Ap Codes. Crafted with{" "}
-                  <i className="mdi mdi-heart text-danger" /> by Themesbrand
+                  © {new Date().getFullYear()} Ap Codes. Feito com{" "}
+                  <i className="mdi mdi-heart text-danger" /> Team AP Codes
                 </p>
               </div>
             </Col>

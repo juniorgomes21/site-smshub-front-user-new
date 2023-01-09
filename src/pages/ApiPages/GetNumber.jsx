@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Container,
 } from "reactstrap";
@@ -20,8 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-// import AuthContext from '../../../api/Context/auth';
-// import { getApiKeyAsyncStorage } from '../../../api/isValidToken/isValidToken';
+import AuthContext from "../../Context/auth";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -80,7 +79,7 @@ const rows3 = [
 ];
 
 const GetNumber = props => {
-
+    const { logado, apiKey } = useContext(AuthContext);
   //meta title
   document.title="API getNumber";
 
@@ -94,7 +93,7 @@ const GetNumber = props => {
             breadcrumbItem={props.t("API get_Number")}
           />
             <div>
-                {/* {
+                {
                     logado ?
                         <div style={{ display: 'flex' }}>
                             <ArrowForwardIcon />
@@ -105,11 +104,7 @@ const GetNumber = props => {
                             <ArrowForwardIcon />
                             <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumber&service=SERVICE&operator=OPERATOR&country=73</p>
                         </div>
-                } */}
-                <div style={{ display: 'flex' }}>
-                    <ArrowForwardIcon />
-                    <p style={styles.paragraph}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumber&service=SERVICE&operator=OPERATOR&country=73</p>
-                </div>
+                }
                 <h4 style={styles.tituloTable}>Parâmetros de entrada</h4>
                 <div>
                     <TableContainer component={Paper}>

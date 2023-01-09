@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import {
   Dropdown,
@@ -15,10 +15,12 @@ import { withRouter, Link } from "react-router-dom";
 
 // users
 import user1 from "../../../assets/images/users/avatar-1.jpg";
-import { Key } from "@mui/icons-material";
+import { Key, LoginOutlined } from "@mui/icons-material";
+import AuthContext from "../../../Context/auth";
 
 const ProfileMenu = (props) => {
   // Declare a new state variable, which we'll call "menu"
+  const { logado } = useContext(AuthContext);
   const [menu, setMenu] = useState(false);
 
   const [username, setusername] = useState("Admin");
@@ -59,15 +61,23 @@ const ProfileMenu = (props) => {
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          <DropdownItem tag="a" href="store24h/configurations">
+          <Link to="/app/store24h/configurations" className="dropdown-item">
             <Key sx={{ marginRight: '6px' }}/>
-            {props.t("API")}
-          </DropdownItem>
-          <div className="dropdown-divider" />
-          <Link to="/logout" className="dropdown-item">
-            <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
-            <span>{props.t("Logout")}</span>
+            <span>{props.t("API")}</span>
           </Link>
+          <div className="dropdown-divider" />
+          {
+            logado ?
+              <Link to="/logout" className="dropdown-item">
+                <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
+                <span>{props.t("Logout")}</span>
+              </Link>
+            :
+              <Link to="/login" className="dropdown-item">
+                <LoginOutlined />
+                <span>{props.t("Login")}</span>
+              </Link>
+        }
         </DropdownMenu>
       </Dropdown>
     </React.Fragment>

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Container,
 } from "reactstrap";
@@ -20,8 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-// import { getApiKeyAsyncStorage } from '../../../api/isValidToken/isValidToken';
-// import AuthContext from '../../../api/Context/auth';
+import AuthContext from "../../Context/auth";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -54,6 +53,7 @@ const rows = [
 ];
 
 const GetNumberStatus = props => {
+  const { logado, apiKey } = useContext(AuthContext);
 
   //meta title
   document.title="API getNumberStatus";
@@ -67,10 +67,18 @@ const GetNumberStatus = props => {
             title={props.t("API get-Number-Status")}
             breadcrumbItem={props.t("API get_Number_Status")}
           />
-            <div style={{ display: 'flex' }}>
-                <ArrowForwardIcon />
-                <p style={styles.paragraph}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumbersStatus&country=COUNTRY&operator=73</p>
-            </div>
+            {
+              logado ?
+                  <div style={{ display: 'flex' }}>
+                      <ArrowForwardIcon />
+                      <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getNumbersStatus&country=COUNTRY&operator=73`}</p>
+                  </div>
+              :
+                  <div style={{ display: 'flex' }}>
+                      <ArrowForwardIcon />
+                      <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumbersStatus&country=COUNTRY&operator=73</p>
+                  </div>
+            }
             <h1 style={{ marginTop: '2%' }}>Parâmetros de entradax</h1>
             <div>
                 <TableContainer component={Paper}>

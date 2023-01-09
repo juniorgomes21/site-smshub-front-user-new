@@ -48,10 +48,10 @@ import {
 let users = [
   {
     uid: 1,
-    username: "admin",
-    role: "admin",
+    username: "",
+    role: "",
     password: "123456",
-    email: "admin@themesbrand.com",
+    email: "@themesbrand.com",
   },
 ]
 
@@ -1097,7 +1097,7 @@ const fakeBackend = () => {
                 commentId: params.commentId,
                 replyId: newReplyId,
                 user: {
-                  name: "Admin",
+                  name: "",
                   profile: "avatar1",
                 },
                 comment: params.replyText,
@@ -1112,7 +1112,7 @@ const fakeBackend = () => {
                 commentId: params.commentId,
                 replyId: newReplyId,
                 user: {
-                  name: "Admin",
+                  name: "",
                   profile: "avatar1",
                 },
                 comment: params.replyText,
@@ -1146,7 +1146,7 @@ const fakeBackend = () => {
           const commentObj = {
             commentId: modifiedComments.length + 1,
             user: {
-              name: "Admin",
+              name: "",
               profile: "avatar1",
             },
             comment: params.commentText,
