@@ -72,8 +72,13 @@ import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-ver
 import Dashboard from "../pages/Dashboard/index";
 import DescreptionApi from "../pages/ApiPages/DescreptionApi";
 import GetNumberStatus from "../pages/ApiPages/GetNumberStatus";
-import Blog from "../pages/Dashboard-Blog/index";
-import DashboardJob from "../pages/DashboardJob/index"
+import Balance from "../pages/ApiPages/Balancer";
+import GetNumber from "../pages/ApiPages/GetNumber";
+import SetStatus from "../pages/ApiPages/SetStatus";
+import GetStatus from "../pages/ApiPages/GetStatus";
+import GetPrices from "../pages/ApiPages/GetPrices";
+import ListaPaisesOperadoras from "../pages/ApiPages/ListaPaisesOperadoras";
+import ListaServicos from "../pages/ApiPages/ListaServicos";
 
 // //Crypto
 import CryptoWallet from "../pages/Crypto/CryptoWallet/crypto-wallet";
@@ -185,8 +190,13 @@ const authProtectedRoutes = [
   { path: "/app/store24h", component: Dashboard },
   { path: "/app/store24h/API/APIprotocoldescription", component: DescreptionApi },
   { path: "/app/store24h/API/getNumberStatus", component: GetNumberStatus },
-  { path: "/blog", component: Blog },
-  { path: "/dashboard-job", component: DashboardJob },
+  { path: "/app/store24h/API/getBalance", component: Balance },
+  { path: "/app/store24h/API/getNumber", component: GetNumber },
+  { path: "/app/store24h/API/setStatus", component: SetStatus },
+  { path: "/app/store24h/API/getStatus", component: GetStatus },
+  { path: "/app/store24h/API/getPrices", component: GetPrices },
+  { path: "/app/store24h/API/listaPaisesOperadoras", component: ListaPaisesOperadoras },
+  { path: "/app/store24h/API/listaServicos", component: ListaServicos },
 
   //   //Crypto
   { path: "/crypto-wallet", component: CryptoWallet },

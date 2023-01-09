@@ -118,27 +118,27 @@ const SidebarContent = props => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#">{props.t("getBalance")}</Link>
+                  <Link to="/app/store24h/API/getBalance">{props.t("getBalance")}</Link>
                 </li>
                 <li>
-                  <Link to="/#">{props.t("getNumber")}</Link>
+                  <Link to="/app/store24h/API/getNumber">{props.t("getNumber")}</Link>
                 </li>
                 <li>
-                  <Link to="/#">{props.t("setStatus")}</Link>
+                  <Link to="/app/store24h/API/setStatus">{props.t("setStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/#">{props.t("getStatus")}</Link>
+                  <Link to="/app/store24h/API/getStatus">{props.t("getStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/#">{props.t("getPrices")}</Link>
+                  <Link to="/app/store24h/API/getPrices">{props.t("getPrices")}</Link>
                 </li>
                 <li>
-                  <Link to="/#">
+                  <Link to="/app/store24h/API/listaPaisesOperadoras">
                     {props.t("Lista de países e operadoras")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#">
+                  <Link to="/app/store24h/API/listaServicos">
                     {props.t("Lista de serviços")}
                   </Link>
                 </li>

@@ -71,7 +71,7 @@ const GetNumberStatus = props => {
                 <ArrowForwardIcon />
                 <p style={styles.paragraph}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumbersStatus&country=COUNTRY&operator=73</p>
             </div>
-            <h1 style={{ marginTop: '2%' }}>Parâmetros de entrada</h1>
+            <h1 style={{ marginTop: '2%' }}>Parâmetros de entradax</h1>
             <div>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -112,7 +112,7 @@ const styles = {
   paragraph: {
     color: '#ee3bd1',
     marginTop: '0.2rem'
-  },
+  }
 
 }
 
