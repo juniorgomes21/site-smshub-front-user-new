@@ -115,7 +115,6 @@ const NotificationDropdown = props => {
                 </div>
               </div>
             </Link>
-
             <Link to="" className="text-reset notification-item">
               <div className="d-flex">
                 <div className="avatar-xs me-3">

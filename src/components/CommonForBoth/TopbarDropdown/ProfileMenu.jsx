@@ -21,7 +21,7 @@ import LocalConvenienceStoreIcon from '@mui/icons-material/LocalConvenienceStore
 
 const ProfileMenu = (props) => {
   // Declare a new state variable, which we'll call "menu"
-  const { logado } = useContext(AuthContext);
+  const { logado, userName } = useContext(AuthContext);
   const [menu, setMenu] = useState(false);
 
   const [username, setusername] = useState("Admin");
@@ -58,7 +58,7 @@ const ProfileMenu = (props) => {
             src={user1}
             alt="Header Avatar"
           />
-          <span className="d-none d-xl-inline-block ms-2 me-1">Nome</span>
+          <span className="d-none d-xl-inline-block ms-2 me-1">{userName}</span>
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">

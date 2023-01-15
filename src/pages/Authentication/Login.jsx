@@ -21,9 +21,10 @@ import logo from "/img/logo.png";
 import AuthContext from "../../Context/auth";
 
 const Login = props => {
-  const { handleLogin } = useContext(AuthContext);
   //meta title
   document.title = "Login | Ap Codes - Vite React Admin & Dashboard Template";
+  
+  const { handleLogin } = useContext(AuthContext);
   const dispatch = useDispatch();
 
   const validation = useFormik({
@@ -69,8 +70,8 @@ const Login = props => {
                         <p>Faça seu login.</p>
                       </div>
                     </Col>
-                    <Col className="col-5 align-self-end">
-                      <img src={profile} alt="" className="img-fluid" />
+                    <Col className="col-5 align-self-end" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '111px' }}>
+                      <img src={profile} alt="" style={{ width: '90px', height: "90px", borderRadius: '30px' }} className="img-fluid" />
                     </Col>
                   </Row>
                 </div>

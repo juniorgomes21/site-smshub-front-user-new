@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'
 import React, { createContext, useState, useEffect } from "react";
-import isValidToken, { getApiKeyAsyncStorage, getTokenAsyncStorage, removeApiKeyAsyncSotorage, removeDateAsyncSotorage, setApiKeyAsyncStorage, setTokenAsyncStorage } from "../isValidToken/isValidToken";
+import isValidToken, { getApiKeyAsyncStorage, getTokenAsyncStorage, removeApiKeyAsyncSotorage, getUserNameAsyncStorage, setUserNameAsyncStorage, removeDateAsyncSotorage, setApiKeyAsyncStorage, setTokenAsyncStorage } from "../isValidToken/isValidToken";
 import apiAxios from '../services/axios';
 
 const AuthContext = createContext(AuthProvider);
@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
     const [loginError, setLoginError] = useState(false);
     const [cpfAux, setCpfAux] = useState('');
     const [token, setToken] = useState('');
+    const [userName, setUserName] = useState('store24Hub');
     const [apiKey, setApiKey] = useState('');
 
     // Auxiliares
@@ -27,6 +28,8 @@ export function AuthProvider({ children }) {
             const tokenAsync = await getTokenAsyncStorage();
             setToken(String(tokenAsync));
             const apiKey = await getApiKeyAsyncStorage();
+            const userName = await getUserNameAsyncStorage();
+            setUserName(userName);
             setApiKey(apiKey);
             setLogado(true);
         } else {
@@ -34,16 +37,6 @@ export function AuthProvider({ children }) {
         }
     }
 
-    async function getApikey(token) {
-        try {
-            const response = await apiAxios.get("/getApiKey", { headers: { 'Authorization' : `Bearer ${token}`}});
-            setApiKey(response.data.apiKey);
-            setApiKeyAsyncStorage(response.data.apiKey);
-            
-        } catch(e) {
-            console.log("Error getApiKey", e);
-        }
-    }
     
     function handleLogout() {
         setToken('');
@@ -57,9 +50,12 @@ export function AuthProvider({ children }) {
         try {
             setLoadingLogin(true);
             const response = await apiAxios.post('/auth/login/user', { "email": email, "senha": senha });
-            setToken(response.data.token);
-            setTokenAsyncStorage(response.data.token);
-            await getApikey(response.data.token);
+            const token = response.data.token;
+            setToken(token);
+            setTokenAsyncStorage(token);
+            const responseUser = await apiAxios.get("/userDetails", { headers: { 'Authorization' : `Bearer ${token}`}});
+            setUserNameAsyncStorage(responseUser.data.nome);
+            await setApiKeyAsyncStorage(responseUser.data.apiKey);
             setLogado(true);
             setLoadingLogin(false);
             window.location.href = "/app/hub24h";
@@ -72,7 +68,7 @@ export function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ logado, apiKey, loading, cpfAux, token, loadingLogin, loginError, handleLogin, handleLogout, auxLogin }}>
+        <AuthContext.Provider value={{ logado, apiKey, userName, loading, cpfAux, token, loadingLogin, loginError, handleLogin, handleLogout, auxLogin }}>
             {children}
         </AuthContext.Provider>
     )
