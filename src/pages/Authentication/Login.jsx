@@ -19,12 +19,13 @@ import { loginUser } from "../../store/actions";
 import profile from "../../assets/images/profile-img.png";
 import logo from "/img/logo.png";
 import AuthContext from "../../Context/auth";
+import { CircularProgress } from "@mui/material";
 
 const Login = props => {
   //meta title
   document.title = "Login | Ap Codes - Vite React Admin & Dashboard Template";
   
-  const { handleLogin } = useContext(AuthContext);
+  const { handleLogin, loadingLogin, loginError } = useContext(AuthContext);
   const dispatch = useDispatch();
 
   const validation = useFormik({
@@ -100,7 +101,12 @@ const Login = props => {
                       }}
                     >
                       {error ? <Alert color="danger">{error}</Alert> : null}
-
+                      {
+                        loginError &&
+                          <div style={{ color: 'red', marginBottom: '1rem' }}>
+                            Email ou senha inválidos!
+                          </div>
+                      }
                       <div className="mb-3">
                         <Label className="form-label">Email</Label>
                         <Input
@@ -137,15 +143,21 @@ const Login = props => {
                           <FormFeedback type="invalid">{validation.errors.password}</FormFeedback>
                         ) : null}
                       </div>
-
-                      <div className="mt-3 d-grid">
-                        <button
-                          className="btn btn-primary btn-block"
-                          type="submit"
-                        >
-                          Login
-                        </button>
-                      </div>
+                      {
+                        loadingLogin ?
+                          <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <CircularProgress />
+                          </div>
+                        :
+                          <div className="mt-3 d-grid">
+                            <button
+                              className="btn btn-primary btn-block"
+                              type="submit"
+                            >
+                              Login
+                            </button>
+                          </div>
+                      }
 
                       <div className="mt-4 text-center">
                         <Link to="/forgot-password" className="text-muted">

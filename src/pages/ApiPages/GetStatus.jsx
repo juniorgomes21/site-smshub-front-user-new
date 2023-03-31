@@ -95,12 +95,12 @@ const GetStatus = props => {
                     logado ?
                         <div style={{ display: 'flex' }}>
                             <ArrowForwardIcon />
-                            <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getBalance`}</p>
+                            <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getStatus&id=ID`}</p>
                         </div>
                     :
                         <div style={{ display: 'flex' }}>
                             <ArrowForwardIcon />
-                            <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getBalance</p>
+                            <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getStatus&id=ID</p>
                         </div>
                     }
                 <h4 style={styles.tituloTable}>Parâmetros de entrada</h4>

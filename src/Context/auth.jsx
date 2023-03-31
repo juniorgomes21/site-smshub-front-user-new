@@ -33,6 +33,7 @@ export function AuthProvider({ children }) {
             setApiKey(apiKey);
             setLogado(true);
         } else {
+            await removeDateAsyncSotorage();
             setLoading(false);
         }
     }

@@ -18,16 +18,17 @@ import apiAxios from "../../services/axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const CompraCredito = props => {
-  const { token } = useContext(AuthContext);
+  const { token, logado } = useContext(AuthContext);
   //meta title
-  document.title="API Lista de serviços";
+  document.title="Comprar de Crédito";
+
   const [loading, setLoading] = useState(false);
   const [credito, setCredito] = useState(0);
   const [selectCredito, setSelectCredito] = useState(0);
   const [erroApi, setErroApi] = useState(false);
 
   useEffect(() => {
-    getInfosCredito();
+      getInfosCredito();
   }, [])
 
   async function getInfosCredito() {
@@ -49,9 +50,7 @@ const CompraCredito = props => {
     } catch(e) {
       setErroApi(true);
       setLoading(false);
-      setTimeout(() => {
-        setErroApi(false);
-      }, 3000)
+      setErroApi(false);
       console.log("error comprarCredito");
     }
   }
@@ -62,8 +61,8 @@ const CompraCredito = props => {
         <Container fluid>
           {/* Render Breadcrumb */}
           <Breadcrumbs
-            title={props.t("API Lista de serviços")}
-            breadcrumbItem={props.t("API Lista de serviços")}
+            title={props.t("Comprar de Crédito")}
+            breadcrumbItem={props.t("Comprar_Crédito")}
           />
               <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', width: '20%', justifyContent: 'center'}}>

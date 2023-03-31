@@ -6,4 +6,11 @@ const apiAxios = axios.create({
     headers: {}
 })
 
+export const apiAxiosHub = axios.create({
+    baseURL: "https://digitalapc.xyz:9988/store",
+    data: {},
+    headers: {},
+
+})
+
 export default apiAxios;

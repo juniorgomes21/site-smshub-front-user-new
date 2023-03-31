@@ -32,6 +32,106 @@ export async function removeDateAsyncSotorage() {
     }
 }
 
+//Lista de serviços
+export async function setListServicesAsyncStorage(accessList) {
+    try {
+        await AsyncStorage.setItem('@ListServices', JSON.stringify(accessList));
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export async function getListServicesAsyncStorage() {
+    try {
+        const ListBuyServicesAsync = await AsyncStorage.getItem('@ListServices');
+        if (ListBuyServicesAsync) {
+
+            const ListBuyServices = JSON.parse(ListBuyServicesAsync);
+
+            return ListBuyServices;
+        }
+
+        return null;
+
+    } catch (e) {
+        console.log(e);
+        return 'deu errado no get';
+    }
+}
+
+export async function removeListServicesAsyncStorage() {
+    try {
+        await AsyncStorage.removeItem('@ListServices');
+        console.log("deu certo async");
+        
+    } catch (e) {
+        console.log("deu error async");
+
+    }
+}
+
+
+//ApiKey
+export async function setApiKeySystemAsyncStorage(token) {
+    try {
+        await AsyncStorage.setItem('@ApiKeySystem', token);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export async function getApiKeySystemAsyncStorage() {
+    try {
+        const response = await AsyncStorage.getItem('@ApiKeySystem');
+        return response;
+
+    } catch (e) {
+        console.log(e);
+        return 'deu errado no get';
+    }
+}
+
+export async function removeApiKeySystemAsyncSotorage() {
+    try {
+        await AsyncStorage.removeItem('@ApiKeySystem');
+        console.log("deu certo async");
+        
+    } catch (e) {
+        console.log("deu error async");
+
+    }
+}
+
+//User
+export async function setUserAsyncStorage(user) {
+    try {
+        await AsyncStorage.setItem('@User', JSON.stringify(user));
+    } catch(e) {
+        console.log("setUserAsyncStorage", e);
+    }
+}
+
+export async function getUserAsyncStorage() {
+    try {
+        
+        const userAsync = await AsyncStorage.getItem('@User');
+
+        if (userAsync) {
+
+            const user = JSON.parse(userAsync);
+
+            return user
+        }
+
+        return null;
+
+    } catch (e) {
+        console.log(e);
+        return 'deu errado no getUserAsyncStorage';
+    }
+}
+
+
 //User
 export async function setUserNameAsyncStorage(userName) {
     try {

@@ -90,12 +90,12 @@ const Balancer = props => {
                 logado ?
                     <div style={{ display: 'flex' }}>
                         <ArrowForwardIcon />
-                        <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getNumber&service=SERVICE&operator=OPERATOR&country=73`}</p>
+                        <p style={{ color: '#ee3bd1' }}>{`https://store24hub.org/stubs/handler_api?api_key=${apiKey}&action=getBalance`}</p>
                     </div>
                 :
                     <div style={{ display: 'flex' }}>
                         <ArrowForwardIcon />
-                        <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getNumber&service=SERVICE&operator=OPERATOR&country=73</p>
+                        <p style={{ color: '#ee3bd1' }}>https://store24hub.org/stubs/handler_api?api_key=APIKEY&action=getBalance</p>
                     </div>
                 }
                 <h4 style={styles.tituloTable}>Parâmetros de entrada</h4>
