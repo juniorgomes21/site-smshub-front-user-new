@@ -27,7 +27,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { apiAxiosHub } from "../../services/axios";
+import apiAxios, { apiAxiosHub } from "../../services/axios";
 import { getTokenAsyncStorage } from "../../isValidToken/isValidToken";
 import { formatarDataDia, formatarDataHora, maskCell, maskMoney } from '../../Validation&Formatation/formatation';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
@@ -71,9 +71,9 @@ const DescreptionApi = props => {
         try {
             setLoading(true);
             const token = await getTokenAsyncStorage();
-            const response = await apiAxiosHub.get(`/adm/getComprasFeitas/hub?page=${page > 0 ? page - 1 : page}`, { headers: { 'Authorization' : `Bearer ${token}`}});
-            setListServicos(response.data);
-            setTotalPages(response.data[0].totalPages);
+            const response = await apiAxios.get(`/apiServicos/getComprasFeitas?page=${page > 0 ? page - 1 : page}`, { headers: { 'Authorization' : `Bearer ${token}`}});
+            setListServicos(response.data.content);
+            setTotalPages(response.data.totalPages);
             setLoading(false);
 
         } catch(e) {
