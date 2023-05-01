@@ -6,6 +6,12 @@ const apiAxios = axios.create({
     headers: {}
 })
 
+const apiApcodesAdm = axios.create({
+    baseURL: "https://apcodes.top:9081/stubs/handler_api/adm",
+    data: {},
+    headers: {}
+})
+
 export const apiAxiosHub = axios.create({
     baseURL: "https://digitalapc.xyz:9988/store",
     data: {},

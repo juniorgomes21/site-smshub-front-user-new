@@ -1,0 +1,49 @@
+.containerInput {
+    display: 'flex';
+    flex-direction: 'column';
+    width: '20%';
+    justify-content: 'center';
+}
+
+.containerText {
+    display: 'flex';
+    flex-direction: 'column';
+    align-items: 'start';
+    width: '20%'
+}
+
+.containerTextSub {
+    display: 'flex';
+    justify-content: 'space-between';
+    margin-left: '5rem'
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .containerInput {
+        display: flex;
+        flex-direction: column;
+        width: "100%";
+        align-items: center;
+    }
+
+    .containerText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: "100%";
+        margin-top: 3rem;
+    }
+
+    .containerTextSub {
+        display: flex;
+        width: "100%";
+        align-items: center;
+    }
+}

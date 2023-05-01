@@ -26,30 +26,39 @@ export function maskMoney(money) {
 
 export function formatarDataDia(data) {
 
-    let dia = data[2];
-    let mes = data[1];
-    let ano = data[0];
+    let dia = data.substring(8, 10);
+    let mes = data.substring(5, 7);
+    let ano = data.substring(0, 4);
 
-    if(dia <= 9) dia = '0' + dia;
-    if(mes < 9) mes = '0' + mes;
+    // if(dia <= 9) dia = '0' + dia;
+    // if(mes < 9) mes = '0' + mes;
+
+    // let dia = data[2];
+    // let mes = data[1];
+    // let ano = data[0];
+
+    // if(dia <= 9) dia = '0' + dia;
+    // if(mes < 9) mes = '0' + mes;
 
     return (dia + '/' + mes + '/' + ano) 
 }
 
 export function formatarDataHora(data) {
+    let hora = data.substring(11, 13);
+    let min = data.substring(14, 16);
 
-    let hora = data[3];
-    let min = data[4];
+    // let hora = data[3];
+    // let min = data[4];
 
-    if(hora < 9) hora = '0' + hora;
+    // if(hora < 9) hora = '0' + hora;
 
-    if(min < 9) {
-        min = '0' + min
-    };
+    // if(min < 9) {
+    //     min = '0' + min
+    // };
 
-    if ( hora <= 12 ) {
-        return (hora + ':' + min)
-    }
+    // if ( hora <= 12 ) {
+    //     return (hora + ':' + min)
+    // }
 
     return (hora + ':' + min)
 }

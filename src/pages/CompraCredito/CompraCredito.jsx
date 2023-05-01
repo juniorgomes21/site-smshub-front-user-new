@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import {
   Container,
 } from "reactstrap";
+import './style.css';
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
@@ -64,8 +65,8 @@ const CompraCredito = props => {
             title={props.t("Comprar de Crédito")}
             breadcrumbItem={props.t("Comprar_Crédito")}
           />
-              <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', width: '20%', justifyContent: 'center'}}>
+              <div className="container" style={{ display: 'flex', justifyContent: 'center', width: '100%'}}>
+                  <div className="containerInput">
                       <h2>Valor do crédito:</h2>
                       <div style={{ display: 'flex' }}>
                         <TextField
@@ -100,8 +101,8 @@ const CompraCredito = props => {
                             </div>
                       }
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' , width: '20%'}}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginLeft: '5rem'}}>
+                  <div className="containerText">
+                      <div className="containerTextSub">
                           <h4 >Crédito disponível:</h4>
                           <h4 style={{ marginLeft: '1rem'}}>{credito}</h4>
                       </div>
@@ -118,5 +119,7 @@ CompraCredito.propTypes = {
   chartsData: PropTypes.any,
   onGetChartsData: PropTypes.func,
 };
+
+
 
 export default withTranslation()(CompraCredito);

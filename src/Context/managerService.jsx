@@ -38,17 +38,19 @@ export function ManagerServiceProvider({ children }) {
     const { vertical, horizontal, openSnackBar } = state;
 
     useEffect(() => {
-        userAPI();
         getService();
-        setInterval(userAPI, 10000);
-    }, []);
+        if(logado == true) {
+            userAPI();
+            setInterval(userAPI, 10000);
+        }
+    }, [logado]);
 
 
 
     async function userAPI() {
         try {
             const token = await getTokenAsyncStorage();
-            const response = await apiAxiosHub.get('/adm/activation/api', { headers: { 'Authorization' : `Bearer ${token}`}});
+            const response = await apiAxios.get('/activations', { headers: { 'Authorization' : `Bearer ${token}`}});
             setSmsListApi(response.data);
             setLoading(false);
         } catch(e) {
@@ -58,11 +60,11 @@ export function ManagerServiceProvider({ children }) {
 
     async function getService() {
         try {
-          const response = await apiAxiosHub.get(`/user/apiServicos/getAllServicesNoActivity`);
-          setServiceList(response.data);
-          setUserAsyncStorage(response.data)
+            const response = await apiAxios.get(`/apiServicos/activity`);
+            setServiceList(response.data);
         } catch(e) {
-          setLoadingServices(false);
+            console.log("getService", e);
+            setLoadingServices(false);
         }
     }
     
@@ -89,7 +91,6 @@ export function ManagerServiceProvider({ children }) {
                     handleClickSnackBar({vertical: 'top', horizontal: 'center' });
                     return;
                 }
-                //ver qual o site..
                 if(window.location.href != "https://apcodes.top/app/hub24h/activations") {
                     window.location = "https://apcodes.top/app/hub24h/activations";
                 }
