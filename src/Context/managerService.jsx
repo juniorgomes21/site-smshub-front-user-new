@@ -4,7 +4,7 @@ import isValidToken, { getApiKeySystemAsyncStorage, getTokenAsyncStorage, remove
 import Button from "@mui/material/Button";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import apiAxios, { apiAxiosHub } from '../services/axios';
+import apiAxios, { api, apiAxiosHub } from '../services/axios';
 import AuthContext from './auth';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -15,7 +15,7 @@ const ManagerServiceContext = createContext(ManagerServiceProvider);
 
 export function ManagerServiceProvider({ children }) {
 
-    const { logado } = useContext(AuthContext);
+    const { logado, apiKey } = useContext(AuthContext);
     const [smsList, setSmsList] = useState([]);
     const [smsListApi, setSmsListApi] = useState([]);
 
@@ -76,8 +76,8 @@ export function ManagerServiceProvider({ children }) {
         } else {
             try {
                 setErrorApi(false);
-                const token = await getTokenAsyncStorage();
-                const response = await apiAxiosHub.post(`/adm/buy/service`, { "aliasService": serviceName }, { headers: { 'Authorization' : `Bearer ${token}`}});
+                console.log(serviceName);
+                const response = await api.get(`/handler_api?api_key=${apiKey}&action=getNumber&service=${serviceName}&country=73`);
                 const badResponse = ["NO_NUMBERS", "NO_BALANCE", "BAD_KEY"];
                 if(badResponse.includes(response.data)) {
                     if(response.data == "NO_NUMBERS") {

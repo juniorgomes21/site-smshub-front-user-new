@@ -28,7 +28,8 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import ManagerServiceContext from "../../Context/managerService";
-import { apiAxiosHub } from "../../services/axios";
+import { api, apiAxiosHub } from "../../services/axios";
+import AuthContext from "../../Context/auth";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -38,6 +39,7 @@ const DescreptionApi = props => {
 
   //meta title
   document.title="Ativação";
+  const { apiKey } = useContext(AuthContext);
   const { smsListApi, userAPI, getService } = useContext(ManagerServiceContext);
   const [loading, setLoading] = useState(false);
   //Cancel
@@ -63,8 +65,7 @@ const DescreptionApi = props => {
           setIndexCancel(index);
           setLoadingCancel(true);
           setErrorApi(false);
-          const token = await getTokenAsyncStorage();
-          await apiAxiosHub.post(`/adm/cancel/activation/${id}`, {}, { headers: { 'Authorization' : `Bearer ${token}`}});
+          await api.get(`/handler_api?api_key=${apiKey}&action=setStatus&status=8&id=${id}`);
           await userAPI();
           setErrorMsgApi("Ativação cancelada!");
           setLoadingCancel(false);
@@ -82,8 +83,7 @@ const DescreptionApi = props => {
           setIndexConclude(index);
           setLoadingConclude(true);
           setErrorApi(false);
-          const token = await getTokenAsyncStorage();
-          await apiAxiosHub.post(`/adm/conclude/activation/${id}`, {}, { headers: { 'Authorization' : `Bearer ${token}`}});
+          await api.get(`/handler_api?api_key=${apiKey}&action=setStatus&status=6&id=${id}`);
           await userAPI();
           setErrorMsgApi("Ativação concluida!");
           setLoadingConclude(false);
@@ -101,8 +101,7 @@ const DescreptionApi = props => {
           setIndexConclude(index);
           setIndexConclude(true);
           setErrorApi(false);
-          const token = await getTokenAsyncStorage();
-          const respose = await apiAxiosHub.post(`/adm/retry/retrysms/${id}`, {}, { headers: { 'Authorization' : `Bearer ${token}`}});
+          const respose = await api.get(`/handler_api?api_key=${apiKey}&action=setStatus&status=3&id=${id}`);
           if(respose.data != "ACCESS_RETRY_GET") {
               setErrorApi(true);
               setIndexConclude(false);
