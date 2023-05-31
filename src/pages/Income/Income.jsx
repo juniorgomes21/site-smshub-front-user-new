@@ -18,6 +18,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import apiAxios from '../../services/axios'
 import LoadingButton from '@mui/lab/LoadingButton';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -73,7 +74,6 @@ const Income = props => {
             setLoadingPrice(true);
             setIndexPrice(id);
             setErrorApi(false);
-            console.log(token);
             await apiAxios.post(`/apiServicos/edit/price/${id}`, { newPrice: valorSolicitado}, { headers: {'Authorization': `Bearer ${token}`}});
             setLoadingPrice(false);
             await getAllServices();
@@ -112,6 +112,24 @@ const Income = props => {
         setState({ ...state, openSnackBar: false });
     };
 
+    function aux(serviceId) {
+        setLoadingPrice(true);
+        setIndexPrice(serviceId);
+        setErrorApi(false);
+        console.log(renda);
+        setTimeout(() => {
+            setLoadingPrice(false);
+        }, 3000);
+    }
+
+    function valueInput(event) {
+        try {
+            return event.target.firstChild.value;
+        } catch(e) {
+            return event.target.valueAsNumber; 
+        }
+    }
+
     return (
         <React.Fragment>
         <div className="page-content">
@@ -126,42 +144,47 @@ const Income = props => {
                     <p>Escolha os serviços de seu interesse:</p>
                     <p style={{ color: 'red' }}>*Você pode usar as setas do teclado para auxiliar na seleção caso seja necessário*</p>
                 </div>
-                { services.map((service, index) => (
-                    <div key={index} style={{ marginTop: '2rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'start'}}>
-                            <img src={getImg(service.alias)} alt="..." style={{ width: '1.5rem', height: '1.5rem'}}/>
-                            <p style={{ marginLeft: '0.5rem', marginTop: '0.1rem' }}>{service.name}</p>
-                            <p style={{ marginLeft: '4rem' }}>Valor do Serviço: R${service.price.toFixed(2)}</p>
-                            <p style={{ marginLeft: '4rem' }}>renda máxima possível é de R$ {Math.round(service.maxPrice).toFixed(2)}.</p>
+                {
+                    services.length == 0 ?
+                        <div style={{ display: 'flex', justifyContent: 'center'}}>
+                            <CircularProgress />
                         </div>
-                        <Box width={300}>
-                            <Slider
-                                aria-label="Small steps"
-                                defaultValue={service.price}
-                                valueLabelDisplay="auto"
-                                onChange={handleChange}
-                                onChangeCommitted={ (e) => {
-                                    // console.log(e.target);
-                                    var lol = e.target.firstChild.value;
-                                    // console.log("e.target.firstChildX\n", lol);
-                                    setValorSolicitado(Number(lol));
-                                }}
-                                step={0.01}
-                                min={minGanhos}
-                                max={Number(Math.round(service.maxPrice.toFixed(2)))}
-                                />
-                            <LoadingButton
-                                loading={service.id == indexPrice && loadingPrice ? true : false}
-                                variant="contained"
-                                color="success"
-                                onClick={() => {apiEditPrice(service.id)}}
-                                style={{ marginLeft: '0.5%', marginTop: '2rem' }}
-                            >
-                                Salvar
-                            </LoadingButton>
-                        </Box>
-                    </div>
-                ))}
+                    :
+                        services.map((service, index) => (
+                            <div key={index} style={{ marginTop: '2rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'start'}}>
+                                    <img src={getImg(service.alias)} alt="..." style={{ width: '1.5rem', height: '1.5rem'}}/>
+                                    <p style={{ marginLeft: '0.5rem', marginTop: '0.1rem' }}>{service.name}</p>
+                                    <p style={{ marginLeft: '4rem' }}>Valor do Serviço: R${service.price.toFixed(2)}</p>
+                                    <p style={{ marginLeft: '4rem' }}>renda máxima possível é de R$ {Math.round(service.maxPrice).toFixed(2)}.</p>
+                                </div>
+                                <Box width={300}>
+                                    <Slider
+                                        aria-label="Small steps"
+                                        defaultValue={service.price}
+                                        valueLabelDisplay="auto"
+                                        onChange={handleChange}
+                                        onChangeCommitted={ (e) => {
+                                            console.log("e.target", e.target);
+                                            // console.log("e.target.firstChildX\n", lol);
+                                            setValorSolicitado(valueInput(e));
+                                        }}
+                                        step={0.01}
+                                        min={minGanhos}
+                                        max={Number(Math.round(service.maxPrice.toFixed(2)))}
+                                        />
+                                    <LoadingButton
+                                        loading={service.id == indexPrice && loadingPrice ? true : false}
+                                        variant="contained"
+                                        color="success"
+                                        onClick={() => aux(service.id)} //{apiEditPrice(service.id)}
+                                        style={{ marginLeft: '0.5%', marginTop: '2rem' }}
+                                    >
+                                        Salvar
+                                    </LoadingButton>
+                                </Box>
+                            </div>
+                    ))}
             </Container>
         </div>
         <Snackbar
