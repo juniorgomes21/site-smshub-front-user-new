@@ -27,13 +27,10 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const Income = props => {
 
     //meta title
-    document.title="store24h - Agente | Renda";
+    document.title="store24h - store24h | Renda";
     const { token } = useContext(AuthContext);
     const [renda, setRenda] = useState(1.5);
-    const [rendax, setRendax] = useState(1.5);
-    const [modelo, setModelo] = useState('');
     const [minGanhos, setMinGanhos] = useState(0.5);
-    const [maxGanhos, setMaxGanhos] = useState(2.25);
     //servicos
     const [loadingServices, setLoadingServices] = useState(true);
     const [services, setListServices] = useState([]);
@@ -54,17 +51,15 @@ const Income = props => {
 
     useEffect(() => {
         getAllServices();
-
     }, []);
 
     async function getAllServices() {
         try {
             setLoadingServices(true);
-            const response = await apiAxios.get("/apiServicos/getAllServicesX");
+            const response = await apiAxios.get("/apiServicos/get/all/services");
             setListServices(response.data);
             setLoadingServices(false);
         } catch(e) {
-            console.log("getAllServices", e);
             setLoadingServices(false);
         }
     }
@@ -89,16 +84,6 @@ const Income = props => {
         setRenda(newValue)
         event.target.value = () => renda
     };
-
-    async function editService(id) {
-        try {
-            await apiAxios.post(`/apiServicos/editService/${id}`, { "price" : valorSolicitado });
-            setValorSolicitado(0);
-
-        } catch(e) { 
-            console.log("editService", e);
-        }
-    }
     
     function getImg(name) {
         return `/img/servicesImg/${name}0.png`;
@@ -111,16 +96,6 @@ const Income = props => {
     function handleCloseSnackBar() {
         setState({ ...state, openSnackBar: false });
     };
-
-    function aux(serviceId) {
-        setLoadingPrice(true);
-        setIndexPrice(serviceId);
-        setErrorApi(false);
-        console.log(renda);
-        setTimeout(() => {
-            setLoadingPrice(false);
-        }, 3000);
-    }
 
     function valueInput(event) {
         try {
@@ -145,7 +120,7 @@ const Income = props => {
                     <p style={{ color: 'red' }}>*Você pode usar as setas do teclado para auxiliar na seleção caso seja necessário*</p>
                 </div>
                 {
-                    services.length == 0 ?
+                    loadingServices ?
                         <div style={{ display: 'flex', justifyContent: 'center'}}>
                             <CircularProgress />
                         </div>
@@ -177,7 +152,7 @@ const Income = props => {
                                         loading={service.id == indexPrice && loadingPrice ? true : false}
                                         variant="contained"
                                         color="success"
-                                        onClick={() => aux(service.id)} //{apiEditPrice(service.id)}
+                                        onClick={() => apiEditPrice(service.id)}
                                         style={{ marginLeft: '0.5%', marginTop: '2rem' }}
                                     >
                                         Salvar

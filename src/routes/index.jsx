@@ -17,7 +17,7 @@ import GetStatus from "../pages/ApiPages/GetStatus";
 import GetPrices from "../pages/ApiPages/GetPrices";
 import ListaServicos from "../pages/ApiPages/ListaServicos";
 import Income from "../pages/Income/Income";
-
+import ActivityService from "../pages/ActivityService/ActivityService";
 import OperatorServices from "../pages/OperatorServices/OperatorServices";
 import History from "../pages/History/History";
 import Activations from "../pages/Activations/Activations";
@@ -27,7 +27,8 @@ const authProtectedRoutes = [
   { path: "/app/hub24h/history", component: History },
   { path: "/app/hub24h/activations", component: Activations },
   { path: "/app/hub24h/CompraCredito", component: CompraCredito },
-  { path: "/app/hub24h/income", component: Income },
+  { path: "/app/hub24h/activityService", component: ActivityService },
+  // { path: "/app/hub24h/income", component: Income },
   { path: "/", exact: true, component: () => <Redirect to="/app/hub24h" /> },
 ];
 

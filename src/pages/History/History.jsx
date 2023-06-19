@@ -90,7 +90,7 @@ const DescreptionApi = props => {
         try {
             setLoading(true);
             const token = await getTokenAsyncStorage();
-            const response = await apiAxios.get(`/apiServicos/getComprasFeitas/hub?page=${page > 0 ? page - 1 : page}&size=${size}`, {headers: {'Authorization' : `Bearer ${token}`}});
+            const response = await apiAxios.get(`/apiServicos/getComprasFeitas?page=${page > 0 ? page - 1 : page}&size=${size}`, {headers: {'Authorization' : `Bearer ${token}`}});
             setListServicos(response.data.content);
             setTotalPages(response.data.totalPages);
             setLoading(false);

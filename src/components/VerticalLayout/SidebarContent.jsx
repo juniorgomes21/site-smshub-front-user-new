@@ -24,7 +24,7 @@ import Box from '@mui/material/Box';
 import Button from "@mui/material/Button";
 import TextField from '@mui/material/TextField';
 import { CircularProgress } from "@mui/material"
-import PersonAdd from '@mui/icons-material/PersonAdd';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 
 const SidebarContent = props => {
   const { serviceList, compraServico } = useContext(ManagerServiceContext);
@@ -190,9 +190,9 @@ const SidebarContent = props => {
               </Link>
             </li>
             <li>
-              <Link to="/app/hub24h/income" >
-                <PersonAdd sx={{ marginRight: '8px' }}/>
-                <span>{props.t("Renda")}</span>
+              <Link to="/app/hub24h/activityService" >
+                <MiscellaneousServicesIcon sx={{ marginRight: '8px' }}/>
+                <span>{props.t("Serviços")}</span>
               </Link>
             </li>
             <li>

@@ -57,7 +57,7 @@ const OperatorServices = props => {
     async function getService() {
       setLoading(true);
       try {
-        const response = await apiAxios.get(`/apiServicos/getAllServices?page=${page > 0 ? page - 1 : page}`);
+        const response = await apiAxios.get(`/apiServicos/get/all/services?page=${page > 0 ? page - 1 : page}`);
         setServiceList(response.data.content);
         setTotalPages(response.data.totalPages);
         setListServiceOpen([]);
