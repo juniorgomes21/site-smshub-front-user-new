@@ -172,10 +172,8 @@ function* onUpdateOrder({ payload: order }) {
 function* onDeleteOrder({ payload: order }) {
   try {
     const response = yield call(deleteOrder, order);
-    console.log("response",response)
     yield put(deleteOrderSuccess(response));
   } catch (error) {
-    console.log("error",error)
     yield put(deleteOrderFail(error));
   }
 }

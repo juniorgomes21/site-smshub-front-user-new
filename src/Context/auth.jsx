@@ -62,7 +62,6 @@ export function AuthProvider({ children }) {
             window.location.href = "/app/hub24h";
 
         } catch (e) {
-            console.log("handleLogin", e);
             setLoginError(true);
             setLoadingLogin(false);
         }

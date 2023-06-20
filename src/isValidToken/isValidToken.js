@@ -6,7 +6,6 @@ export async function setTokenAsyncStorage(token) {
     try {
         await AsyncStorage.setItem('@TokenAuthentication', token);
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -16,7 +15,6 @@ export async function getTokenAsyncStorage() {
         return response;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no get';
     }
 }
@@ -24,20 +22,17 @@ export async function getTokenAsyncStorage() {
 export async function removeDateAsyncSotorage() {
     try {
         await AsyncStorage.removeItem('@TokenAuthentication');
-        console.log("deu certo async");
         
     } catch (e) {
-        console.log("deu error async");
 
     }
 }
 
-//Lista de serviços
+
 export async function setListServicesAsyncStorage(accessList) {
     try {
         await AsyncStorage.setItem('@ListServices', JSON.stringify(accessList));
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -54,7 +49,6 @@ export async function getListServicesAsyncStorage() {
         return null;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no get';
     }
 }
@@ -62,21 +56,18 @@ export async function getListServicesAsyncStorage() {
 export async function removeListServicesAsyncStorage() {
     try {
         await AsyncStorage.removeItem('@ListServices');
-        console.log("deu certo async");
         
     } catch (e) {
-        console.log("deu error async");
 
     }
 }
 
 
-//ApiKey
+
 export async function setApiKeySystemAsyncStorage(token) {
     try {
         await AsyncStorage.setItem('@ApiKeySystem', token);
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -86,7 +77,6 @@ export async function getApiKeySystemAsyncStorage() {
         return response;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no get';
     }
 }
@@ -94,20 +84,17 @@ export async function getApiKeySystemAsyncStorage() {
 export async function removeApiKeySystemAsyncSotorage() {
     try {
         await AsyncStorage.removeItem('@ApiKeySystem');
-        console.log("deu certo async");
         
     } catch (e) {
-        console.log("deu error async");
 
     }
 }
 
-//User
+
 export async function setUserAsyncStorage(user) {
     try {
         await AsyncStorage.setItem('@User', JSON.stringify(user));
     } catch(e) {
-        console.log("setUserAsyncStorage", e);
     }
 }
 
@@ -126,7 +113,6 @@ export async function getUserAsyncStorage() {
         return null;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no getUserAsyncStorage';
     }
 }
@@ -137,7 +123,6 @@ export async function setUserNameAsyncStorage(userName) {
     try {
         await AsyncStorage.setItem('@UserName', userName);
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -147,7 +132,6 @@ export async function getUserNameAsyncStorage() {
         return response;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no get';
     }
 }
@@ -155,10 +139,8 @@ export async function getUserNameAsyncStorage() {
 export async function removeUserNameAsyncSotorage() {
     try {
         await AsyncStorage.removeItem('@UserName');
-        console.log("deu certo async");
         
     } catch (e) {
-        console.log("deu error async");
 
     }
 }
@@ -168,7 +150,6 @@ export async function setApiKeyAsyncStorage(apiKey) {
     try {
         await AsyncStorage.setItem('@ApiKey', apiKey);
     } catch (e) {
-        console.log(e);
     }
 }
 
@@ -178,7 +159,6 @@ export async function getApiKeyAsyncStorage() {
         return response;
 
     } catch (e) {
-        console.log(e);
         return 'deu errado no get';
     }
 }
@@ -186,11 +166,7 @@ export async function getApiKeyAsyncStorage() {
 export async function removeApiKeyAsyncSotorage() {
     try {
         await AsyncStorage.removeItem('@ApiKey');
-        console.log("deu certo async");
-        
     } catch (e) {
-        console.log("deu error async");
-
     }
 }
 

@@ -29,7 +29,6 @@ function* editProfile({ payload: { user } }) {
       })
       yield put(profileSuccess(response))
     } else if (import.meta.env.VITE_APP_DEFAULTAUTH === "fake") {
-      console.log("response", user)
       const response = yield call(postFakeProfile, {
         username: user.username,
         idx: user.idx,

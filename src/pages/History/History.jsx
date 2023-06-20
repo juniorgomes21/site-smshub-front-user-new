@@ -96,7 +96,6 @@ const DescreptionApi = props => {
             setLoading(false);
 
         } catch(e) {
-            console.log("error getListCompras", e);
             setLoading(false);
         }
     }
@@ -113,14 +112,12 @@ const DescreptionApi = props => {
                 dateInitial: String(dateInitial),
                 dateFinal: String(new Date(dateFinal))
             }
-            console.log(obj);
             const response = await apiAxios.post(`/apiServicos/getComprasFeitas/hub/filter?page=${page > 0 ? page - 1 : page}&size=${size}`, obj, {headers: {'Authorization' : `Bearer ${token}`}});
             setListServicos(response.data.content);
             setTotalPages(response.data.totalPages);
             setLoading(false);
 
         } catch(e) {
-            console.log("error getListComprasFilter", e);
             setLoading(false);
         }
     }

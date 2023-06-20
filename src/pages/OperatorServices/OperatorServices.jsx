@@ -64,7 +64,6 @@ const OperatorServices = props => {
         setLoading(false);
 
       } catch(e) {
-        console.log("getServices", e);
         setLoading(false);
       }
     }
@@ -82,7 +81,6 @@ const OperatorServices = props => {
         }
         setListServiceOpen(listServiceOpen);
         setOpen(!open);
-        console.log(listServiceOpen);
     }
 
     function verifyIndex(index) {

@@ -48,7 +48,6 @@ const UserProfile = (props) => {
     if (localStorage.getItem("authUser")) {
       const obj = JSON.parse(localStorage.getItem("authUser"));
       if (import.meta.env.VITE_APP_DEFAULTAUTH === "firebase") {
-        console.log("hh", import.meta.env.VITE_APP_DEFAULTAUTH)
         setname(obj.displayName);
         setemail(obj.email);
         setidx(obj.uid);

@@ -39,7 +39,6 @@ const CompraCredito = props => {
       setLoading(false);
     } catch(e) {
       setLoading(false);
-      console.log("error getInfosCredito", e);
     }
   }
 
@@ -52,7 +51,6 @@ const CompraCredito = props => {
       setErroApi(true);
       setLoading(false);
       setErroApi(false);
-      console.log("error comprarCredito");
     }
   }
 

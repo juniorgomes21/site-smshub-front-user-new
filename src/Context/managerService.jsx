@@ -63,7 +63,6 @@ export function ManagerServiceProvider({ children }) {
             const response = await apiAxios.get(`/apiServicos/activity`);
             setServiceList(response.data);
         } catch(e) {
-            console.log("getService", e);
             setLoadingServices(false);
         }
     }
@@ -76,7 +75,6 @@ export function ManagerServiceProvider({ children }) {
         } else {
             try {
                 setErrorApi(false);
-                console.log(serviceName);
                 const response = await api.get(`/handler_api?api_key=${apiKey}&action=getNumber&service=${serviceName}&country=73`);
                 const badResponse = ["NO_NUMBERS", "NO_BALANCE", "BAD_KEY"];
                 if(badResponse.includes(response.data)) {
@@ -99,7 +97,6 @@ export function ManagerServiceProvider({ children }) {
                 handleClickSnackBar({vertical: 'top', horizontal: 'center' });
         
             } catch(e) {
-                console.log(e);
                 setErrorApi(true);
                 handleClickSnackBar({vertical: 'top', horizontal: 'center' });
             }

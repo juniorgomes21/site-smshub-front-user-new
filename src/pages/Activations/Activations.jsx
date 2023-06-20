@@ -111,9 +111,7 @@ const DescreptionApi = props => {
           setErrorMsgApi("Reenvie o sms!");
           setIndexConclude(false);
           handleClickSnackBar({vertical: 'top', horizontal: 'center'});
-
       } catch(e) {
-          console.log(e);
       }
   }
 

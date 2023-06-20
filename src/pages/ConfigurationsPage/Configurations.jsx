@@ -55,9 +55,6 @@ const DescreptionApi = props => {
             setLoading(false);
 
         } catch(e) {
-            // setTextSnackbar(e);
-            console.log(e)
-            console.log("Error getApiKey", e.response.data);
             setTextSnackbar(e.response.data);
             setErrorApi(true);
             setOpen(true);

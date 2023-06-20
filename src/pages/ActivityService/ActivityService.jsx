@@ -89,7 +89,6 @@ const ActivityService = props => {
             }
         } catch(e) {
             handleClickSnackBar({vertical: 'top', horizontal: 'center' });
-            console.log("apiSetActivity", e);
         }
     }
 
@@ -97,14 +96,10 @@ const ActivityService = props => {
         const index = serviceModify.indexOf(alias);
 
         if (index !== -1) {
-            // Remove o alias existente
             serviceModify.splice(index, 1);
         } else {
-            // Adiciona o alias à lista
             serviceModify.push(alias);
         }
-
-        console.log(serviceModify);
     }
 
     function getImg(name) {
