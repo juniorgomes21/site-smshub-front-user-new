@@ -25,7 +25,7 @@ const Sidebar = props => {
     <React.Fragment>
       <div className="vertical-menu">
         <div className="navbar-brand-box" style={{ background: '#0703ad' }}>
-          <Link to="/app/hub24h" className="logo logo-light">
+          <Link to="/app" className="logo logo-light">
             <span className="logo-sm">
               <img src={logoLightSvg} alt="" height="22" />
             </span>

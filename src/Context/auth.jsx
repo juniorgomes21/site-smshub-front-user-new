@@ -44,7 +44,7 @@ export function AuthProvider({ children }) {
         setLogado(false);
         removeDateAsyncSotorage();
         removeApiKeyAsyncSotorage();
-        window.location.href = "/app/hub24h";
+        window.location.href = "/app";
     }
 
     async function handleLogin(email, senha) {
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
             await setApiKeyAsyncStorage(responseUser.data.apiKey);
             setLogado(true);
             setLoadingLogin(false);
-            window.location.href = "/app/hub24h";
+            window.location.href = "/app";
 
         } catch (e) {
             setLoginError(true);

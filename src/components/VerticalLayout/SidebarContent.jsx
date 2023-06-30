@@ -140,7 +140,7 @@ const SidebarContent = props => {
           <ul className="metismenu list-unstyled" id="side-menu">
             <li className="menu-title">{props.t("Menu")} </li>
             <li>
-              <Link to="/app/hub24h">
+              <Link to="/app">
                 <i className="bx bx-home-circle"></i>
                 <span>{props.t("Dashboards")}</span>
               </Link>
@@ -153,30 +153,30 @@ const SidebarContent = props => {
               </Link>
               <ul className="sub-menu" aria-expanded="false">
                 <li>
-                  <Link to="/app/hub24h/API/APIprotocoldescription">{props.t("API protocol description")}</Link>
+                  <Link to="/app/API/APIprotocoldescription">{props.t("API protocol description")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/getNumberStatus">
+                  <Link to="/app/API/getNumberStatus">
                     {props.t("getNumbersStatus")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/getBalance">{props.t("getBalance")}</Link>
+                  <Link to="/app/API/getBalance">{props.t("getBalance")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/getNumber">{props.t("getNumber")}</Link>
+                  <Link to="/app/API/getNumber">{props.t("getNumber")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/setStatus">{props.t("setStatus")}</Link>
+                  <Link to="/app/API/setStatus">{props.t("setStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/getStatus">{props.t("getStatus")}</Link>
+                  <Link to="/app/API/getStatus">{props.t("getStatus")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/getPrices">{props.t("getPrices")}</Link>
+                  <Link to="/app/API/getPrices">{props.t("getPrices")}</Link>
                 </li>
                 <li>
-                  <Link to="/app/hub24h/API/listaServicos">
+                  <Link to="/app/API/listaServicos">
                     {props.t("Lista de serviços")}
                   </Link>
                 </li>
@@ -184,31 +184,31 @@ const SidebarContent = props => {
             </li>
 
             <li>
-              <Link to="/app/hub24h/CompraCredito" >
+              <Link to="/app/CompraCredito" >
                 <AddShoppingCartIcon sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Comprar Crédito")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/hub24h/activityService" >
+              <Link to="/app/activityService" >
                 <MiscellaneousServicesIcon sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Serviços")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/hub24h/history" >
+              <Link to="/app/history" >
                 <Article sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Histórico")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/hub24h/activations" >
+              <Link to="/app/activations" >
                 <Sms sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Ativações")}</span>
               </Link>
             </li>
             <li>
-              <Link to="/app/hub24h/configurations" >
+              <Link to="/app/configurations" >
                 <Settings sx={{ marginRight: '8px' }}/>
                 <span>{props.t("Configurações")}</span>
               </Link>

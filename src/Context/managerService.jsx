@@ -89,8 +89,8 @@ export function ManagerServiceProvider({ children }) {
                     handleClickSnackBar({vertical: 'top', horizontal: 'center' });
                     return;
                 }
-                if(window.location.href != "https://apcodes.top/app/hub24h/activations") {
-                    window.location = "https://apcodes.top/app/hub24h/activations";
+                if(window.location.href != "https://apcodes.top/app/activations") {
+                    window.location = "https://apcodes.top/app/activations";
                 }
                 getService();
                 await userAPI();

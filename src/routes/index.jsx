@@ -24,26 +24,26 @@ import Activations from "../pages/Activations/Activations";
 import Configurations from "../pages/ConfigurationsPage/Configurations";
 
 const authProtectedRoutes = [
-  { path: "/app/hub24h/history", component: History },
-  { path: "/app/hub24h/activations", component: Activations },
-  { path: "/app/hub24h/CompraCredito", component: CompraCredito },
-  { path: "/app/hub24h/activityService", component: ActivityService },
-  // { path: "/app/hub24h/income", component: Income },
-  { path: "/", exact: true, component: () => <Redirect to="/app/hub24h" /> },
+  { path: "/app/history", component: History },
+  { path: "/app/activations", component: Activations },
+  { path: "/app/CompraCredito", component: CompraCredito },
+  { path: "/app/activityService", component: ActivityService },
+  // { path: "/app/income", component: Income },
+  { path: "/", exact: true, component: () => <Redirect to="/app" /> },
 ];
 
 const publicRoutes = [
-  { path: "/app/hub24h", component: Dashboard },
-  { path: "/app/hub24h/API/APIprotocoldescription", component: DescreptionApi },
-  { path: "/app/hub24h/API/getStatus", component: GetStatus },
-  { path: "/app/hub24h/API/getPrices", component: GetPrices },
-  { path: "/app/hub24h/API/listaServicos", component: ListaServicos },
-  { path: "/app/hub24h/API/getNumberStatus", component: GetNumberStatus },
-  { path: "/app/hub24h/API/getBalance", component: Balance },
-  { path: "/app/hub24h/API/getNumber", component: GetNumber },
-  { path: "/app/hub24h/API/setStatus", component: SetStatus },
-  { path: "/app/hub24h/configurations", component: Configurations },
-  { path: "/app/hub24h/API/operatorServices", component: OperatorServices },
+  { path: "/app", component: Dashboard },
+  { path: "/app/API/APIprotocoldescription", component: DescreptionApi },
+  { path: "/app/API/getStatus", component: GetStatus },
+  { path: "/app/API/getPrices", component: GetPrices },
+  { path: "/app/API/listaServicos", component: ListaServicos },
+  { path: "/app/API/getNumberStatus", component: GetNumberStatus },
+  { path: "/app/API/getBalance", component: Balance },
+  { path: "/app/API/getNumber", component: GetNumber },
+  { path: "/app/API/setStatus", component: SetStatus },
+  { path: "/app/configurations", component: Configurations },
+  { path: "/app/API/operatorServices", component: OperatorServices },
 
   { path: "/logout", component: Logout },
   { path: "/login", component: Login },
